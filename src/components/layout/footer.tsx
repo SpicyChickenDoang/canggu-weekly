@@ -11,6 +11,11 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Logo />
               <span className="font-headline text-lg font-bold text-foreground">Canggu Weekly</span>
+              <p className="mt-4">
+                Jl. Danau Poso 38, <br />
+                Sanur 80228, Denpasar Selatan, <br />
+                Bali, Indonesia
+              </p>
             </div>
           </div>
 
@@ -23,25 +28,20 @@ export function Footer() {
             <a href="mailto:cangguweekly@gmail.com" className="font-medium text-foreground hover:underline">
               cangguweekly@gmail.com
             </a>
-            <p className="mt-4">
-                Jl. Danau Poso 38, <br/>
-                Sanur 80228, Denpasar Selatan, <br/>
-                Bali, Indonesia
-            </p>
           </div>
-          
+
           {/* Column 3: Legal Info */}
           <div className="text-center text-xs text-muted-foreground md:text-right">
-             <p>SIUP: NO.170/24/2143/DS/BPPTSP&PM/2016</p>
-             <p>TDP. NO: 22.09.1.73.00392</p>
-             <p>NPWP NO: 31.280.658.1-903.00</p>
+            <p>SIUP: NO.170/24/2143/DS/BPPTSP&PM/2016</p>
+            <p>TDP. NO: 22.09.1.73.00392</p>
+            <p>NPWP NO: 31.280.658.1-903.00</p>
           </div>
         </div>
-        
+
         {/* Bottom Bar */}
         <div className="mt-10 border-t pt-6 text-center text-xs md:flex md:items-center md:justify-between">
-            <p className='mb-2 md:mb-0'>© 2025 by Canggu Weekly</p>
-            <Link href="#" className="hover:text-primary">Privacy Policy</Link>
+          <p className='mb-2 md:mb-0'>© 2025 by Canggu Weekly</p>
+          <Link href="#" className="hover:text-primary">Privacy Policy</Link>
         </div>
       </div>
     </footer>

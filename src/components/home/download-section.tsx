@@ -45,7 +45,7 @@ export function DownloadSection() {
                     src={downloadImage.imageUrl}
                     alt={downloadImage.description}
                     fill
-                    className="object-cover rounded-r-lg"
+                    className="object-cover"
                     data-ai-hint={downloadImage.imageHint}
                 />
             </div>
