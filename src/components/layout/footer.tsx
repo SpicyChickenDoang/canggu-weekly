@@ -7,8 +7,7 @@ export function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Column 1: Logo */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-col">
               <Logo />
               <span className="font-headline text-lg font-bold text-foreground">Canggu Weekly</span>
               <p className="mt-4">
@@ -16,7 +15,7 @@ export function Footer() {
                 Sanur 80228, Denpasar Selatan, <br />
                 Bali, Indonesia
               </p>
-            </div>
+
           </div>
 
           {/* Column 2: Direct Contact */}
