@@ -4,12 +4,14 @@ import { getArticlesByIssue, getFeaturedArticle } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { ArticleCard } from '@/components/article-card';
 import { ArrowRight } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const featuredArticle = getFeaturedArticle(1);
   const currentArticles = getArticlesByIssue(1).filter(
     (article) => article.id !== featuredArticle?.id
   );
+  const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
 
   if (!featuredArticle) {
     return (
@@ -48,6 +50,34 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="flex flex-col justify-center md:col-span-2">
+            <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Current</h2>
+            <p className="mb-4 text-muted-foreground">
+              Welcome to your premier digital guide to the vibrant heart of Bali. We are a passionate team of writers, photographers, and surfers dedicated to bringing you the most authentic and up-to-date stories from Canggu and beyond.
+            </p>
+            <p className="mb-6 text-muted-foreground">
+              Our mission is to capture the unique blend of modern tropical living, ancient culture, and bohemian spirit that makes this corner of the world so special.
+            </p>
+            <Button asChild variant="secondary">
+              <Link href="/about">
+                Learn More About Us
+              </Link>
+            </Button>
+          </div>
+          <div className="relative hidden h-64 w-full md:block">
+            <Image
+              src={aboutImage.imageUrl}
+              alt="Canggu cafe"
+              fill
+              className="rounded-lg object-cover"
+              data-ai-hint={aboutImage.imageHint}
+            />
           </div>
         </div>
       </section>
