@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getArticlesByIssue, getFeaturedArticle } from '@/lib/data';
+import { getArticlesByIssue } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { ArticleCard } from '@/components/article-card';
 import { ArrowRight } from 'lucide-react';
@@ -8,13 +8,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { DownloadSection } from '@/components/download-section';
 
 export default function Home() {
-  const featuredArticle = getFeaturedArticle(1);
-  const currentArticles = getArticlesByIssue(1).filter(
-    (article) => article.id !== featuredArticle?.id
-  );
+  const currentArticles = getArticlesByIssue(1);
   const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
+  const heroImage = PlaceHolderImages.find(p => p.id === 'surf-spots') ?? PlaceHolderImages[3];
 
-  if (!featuredArticle) {
+
+  if (!currentArticles || currentArticles.length === 0) {
     return (
       <div className="container py-12 text-center">
         <h2 className="text-2xl font-bold">No articles found for this week.</h2>
@@ -27,27 +26,27 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="relative h-64 w-full md:h-auto">
+          <div className="relative h-64 w-full md:h-auto min-h-[300px]">
             <Image
-              src={featuredArticle.imageUrl}
-              alt={featuredArticle.title}
+              src={heroImage.imageUrl}
+              alt="Canggu beach"
               fill
               className="rounded-lg object-cover"
-              data-ai-hint={featuredArticle.imageHint}
+              data-ai-hint={heroImage.imageHint}
               priority
             />
           </div>
           <div className="flex flex-col justify-center">
             <h1 className="mb-4 font-headline text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              {featuredArticle.title}
+              Your Weekly Dose of Paradise
             </h1>
             <p className="mb-6 text-lg text-muted-foreground">
-              {featuredArticle.excerpt}
+              Welcome to Canggu Current, your premier digital guide to the vibrant heart of Bali. Discover the latest stories in local culture, surf, and food.
             </p>
             <div className="flex items-center gap-4">
               <Button asChild size="lg">
-                <Link href={`/article/${featuredArticle.slug}`}>
-                  Read More <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/archive">
+                  Explore Issues <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
