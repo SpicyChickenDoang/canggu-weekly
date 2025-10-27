@@ -32,7 +32,7 @@ export default function DownloadArticlePage() {
   const handleDownload = () => {
     if (selectedFile) {
       // The files are in the public directory, so they are directly accessible.
-      window.location.href = `/article-pdfs/${selectedFile}`;
+      window.open(`/article-pdfs/${selectedFile}`, '_blank');
     }
   };
 
