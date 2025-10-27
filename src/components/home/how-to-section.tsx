@@ -9,15 +9,6 @@ export function HowToSection() {
     return (
         <section className="overflow-hidden rounded-lg bg-card">
             <div className="grid md:grid-cols-2">
-                <div className="relative hidden min-h-[300px] w-full md:block">
-                    <Image
-                    src={howToImage.imageUrl}
-                    alt={howToImage.description}
-                    fill
-                    className="rounded-l-lg object-cover"
-                    data-ai-hint={howToImage.imageHint}
-                    />
-                </div>
                 <div className="flex flex-col justify-center p-8 text-center md:p-12 md:text-left">
                     <h2 className="mb-4 font-headline text-3xl font-bold">
                         How To: Get Your Advertising in The Canggu Weekly
@@ -30,6 +21,15 @@ export function HowToSection() {
                             <Link href="/contact">Contact Sales</Link>
                         </Button>
                     </div>
+                </div>
+                <div className="relative hidden min-h-[300px] w-full md:block">
+                    <Image
+                    src={howToImage.imageUrl}
+                    alt={howToImage.description}
+                    fill
+                    className="rounded-r-lg object-cover"
+                    data-ai-hint={howToImage.imageHint}
+                    />
                 </div>
             </div>
         </section>
