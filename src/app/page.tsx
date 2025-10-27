@@ -1,19 +1,12 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { getArticlesByIssue } from '@/lib/data';
-import { Button } from '@/components/ui/button';
-import { ArticleCard } from '@/components/article-card';
-import { ArrowRight } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { DownloadSection } from '@/components/download-section';
-import { ContactForm } from '@/components/contact-form';
+import { HeroSection } from '@/components/home/hero-section';
+import { AboutSection } from '@/components/home/about-section';
+import { DownloadSection } from '@/components/home/download-section';
+import { HowToSection } from '@/components/home/how-to-section';
+import { ContactSection } from '@/components/home/contact-section';
 
 export default function Home() {
   const currentArticles = getArticlesByIssue(1);
-  const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
-  const heroImage = PlaceHolderImages.find(p => p.id === 'surf-spots') ?? PlaceHolderImages[3];
-  const howToImage = PlaceHolderImages.find(p => p.id === 'archive-1') ?? PlaceHolderImages[10];
-
 
   if (!currentArticles || currentArticles.length === 0) {
     return (
@@ -26,64 +19,10 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative -mx-4 -mt-8">
-        <div className="grid min-h-screen md:grid-cols-2">
-            <div className="relative hidden md:block">
-              <Image
-                  src={heroImage.imageUrl}
-                  alt="Canggu beach"
-                  fill
-                  className="object-cover"
-                  data-ai-hint={heroImage.imageHint}
-                  priority
-              />
-            </div>
-            <div className="flex flex-col items-center justify-center p-8 text-center md:items-start md:p-16 md:text-left">
-              <h1 className="mb-4 font-headline text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                  Your Weekly Dose of Paradise
-              </h1>
-              <p className="mb-6 max-w-lg text-lg text-muted-foreground">
-                  Welcome to Canggu Weekly, your premier digital guide to the vibrant heart of Bali. Discover the latest stories in local culture, surf, and food.
-              </p>
-              <div className="flex items-center gap-4">
-                  <Button asChild size="lg">
-                  <Link href="/archive">
-                      Explore Issues <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                  </Button>
-              </div>
-            </div>
-        </div>
-      </section>
+      <HeroSection />
       
       <div className="container mx-auto space-y-16 px-4 py-8">
-        <section className="overflow-hidden rounded-lg bg-card">
-          <div className="grid md:grid-cols-2">
-            <div className="flex flex-col justify-center p-8 md:p-12">
-              <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Weekly</h2>
-              <p className="mb-4 text-muted-foreground">
-                Welcome to your premier digital guide to the vibrant heart of Bali. We are a passionate team of writers, photographers, and surfers dedicated to bringing you the most authentic and up-to-date stories from Canggu and beyond.
-              </p>
-              <p className="mb-6 text-muted-foreground">
-                Our mission is to capture the unique blend of modern tropical living, ancient culture, and bohemian spirit that makes this corner of the world so special.
-              </p>
-              <Button asChild variant="secondary">
-                <Link href="/about">
-                  Learn More About Us
-                </Link>
-              </Button>
-            </div>
-            <div className="relative hidden min-h-[300px] w-full md:block">
-              <Image
-                src={aboutImage.imageUrl}
-                alt="Canggu cafe"
-                fill
-                className="rounded-r-lg object-cover"
-                data-ai-hint={aboutImage.imageHint}
-              />
-            </div>
-          </div>
-        </section>
+        <AboutSection />
 
         {/* <section>
           <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
@@ -94,44 +33,11 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section>
-          <div className="mx-auto max-w-5xl">
-            <DownloadSection />
-          </div>
-        </section>
+        <DownloadSection />
         
-        <section className="overflow-hidden rounded-lg bg-card">
-            <div className="grid md:grid-cols-2">
-                <div className="relative hidden min-h-[300px] w-full md:block">
-                  <Image
-                    src={howToImage.imageUrl}
-                    alt={howToImage.description}
-                    fill
-                    className="rounded-l-lg object-cover"
-                    data-ai-hint={howToImage.imageHint}
-                  />
-                </div>
-                <div className="flex flex-col justify-center p-8 text-center md:p-12 md:text-left">
-                    <h2 className="mb-4 font-headline text-3xl font-bold">
-                        How To: Get Your Advertising in The Canggu Weekly
-                    </h2>
-                    <p className="mx-auto max-w-2xl text-muted-foreground">
-                        Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, we can help you connect with our readers. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
-                    </p>
-                    <div className="mt-6 flex justify-center md:justify-start">
-                        <Button asChild>
-                            <Link href="/contact">Contact Sales</Link>
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <HowToSection />
 
-        <section>
-          <div className="mx-auto max-w-lg">
-              <ContactForm />
-          </div>
-        </section>
+        <ContactSection />
       </div>
     </>
   );
