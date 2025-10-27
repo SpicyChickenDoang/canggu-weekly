@@ -3,36 +3,53 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="border-t bg-card">
-      <div className="container py-10">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <footer className="border-t bg-card text-muted-foreground">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          {/* Column 1: Logo and Social */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Logo />
-              <span className="font-headline text-lg font-bold">Canggu Weekly</span>
+              <span className="font-headline text-lg font-bold text-foreground">Canggu Weekly</span>
             </div>
-            <p className="mt-4 text-center text-sm leading-loose text-muted-foreground md:text-left">
-              © {new Date().getFullYear()} Canggu Weekly. All Rights Reserved.
+            <div className="mt-4 text-center md:text-left">
+                <h3 className="font-headline font-semibold text-foreground">Follow Us</h3>
+                <div className="mt-2 flex justify-center gap-4 md:justify-start">
+                <Link href="#" className="hover:text-primary">Facebook</Link>
+                <Link href="#" className="hover:text-primary">Instagram</Link>
+                <Link href="#" className="hover:text-primary">Twitter</Link>
+                </div>
+            </div>
+          </div>
+
+          {/* Column 2: Direct Contact */}
+          <div className="text-center text-sm md:text-left">
+            <h3 className="font-headline font-semibold text-foreground">Direct Contact</h3>
+            <p className="mt-2">
+              To contact us directly please use the following email address:
+            </p>
+            <a href="mailto:cangguweekly@gmail.com" className="font-medium text-foreground hover:underline">
+              cangguweekly@gmail.com
+            </a>
+            <p className="mt-4">
+                Jl. Danau Poso 38, <br/>
+                Sanur 80228, Denpasar Selatan, <br/>
+                Bali, Indonesia
             </p>
           </div>
-
-          <div className="text-center">
-            <h3 className="font-headline font-semibold">Follow Us</h3>
-            <div className="mt-2 flex justify-center gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">Facebook</Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">Instagram</Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">Twitter</Link>
-            </div>
+          
+          {/* Column 3: Legal Info */}
+          <div className="text-center text-xs text-muted-foreground md:text-right">
+             <p>SIUP: NO.170/24/2143/DS/BPPTSP&PM/2016</p>
+             <p>TDP. NO: 22.09.1.73.00392</p>
+             <p>NPWP NO: 31.280.658.1-903.00</p>
           </div>
-
-          <div className="text-center md:text-right">
-            <h3 className="font-headline font-semibold">Navigate</h3>
-            <div className="mt-2 flex flex-col items-center gap-2 md:items-end">
-              <Link href="/about" className="text-muted-foreground hover:text-primary">About</Link>
-              <Link href="/download-article" className="text-muted-foreground hover:text-primary">Download</Link>
-              <Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link>
-            </div>
-          </div>
+        </div>
+        
+        {/* Bottom Bar */}
+        <div className="mt-10 border-t pt-6 text-center text-xs md:flex md:items-center md:justify-between">
+            <p className='mb-2 md:mb-0'>© 2025 by Canggu Weekly</p>
+            <Link href="#" className="hover:text-primary">Privacy Policy</Link>
         </div>
       </div>
     </footer>
