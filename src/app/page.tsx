@@ -56,9 +56,9 @@ export default function Home() {
       </section>
       
       <div className="container mx-auto space-y-16 px-4 py-8">
-        <section className="rounded-lg bg-card p-8 md:p-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col justify-center md:col-span-2">
+        <section className="overflow-hidden rounded-lg bg-card">
+          <div className="grid md:grid-cols-2">
+            <div className="flex flex-col justify-center p-8 md:p-12">
               <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Weekly</h2>
               <p className="mb-4 text-muted-foreground">
                 Welcome to your premier digital guide to the vibrant heart of Bali. We are a passionate team of writers, photographers, and surfers dedicated to bringing you the most authentic and up-to-date stories from Canggu and beyond.
@@ -72,12 +72,12 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="relative hidden h-64 w-full md:block">
+            <div className="relative hidden min-h-[300px] w-full md:block">
               <Image
                 src={aboutImage.imageUrl}
                 alt="Canggu cafe"
                 fill
-                className="rounded-lg object-cover"
+                className="rounded-r-lg object-cover"
                 data-ai-hint={aboutImage.imageHint}
               />
             </div>
