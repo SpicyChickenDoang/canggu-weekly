@@ -6,19 +6,11 @@ export function Footer() {
     <footer className="border-t bg-card text-muted-foreground">
       <div className="container py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          {/* Column 1: Logo and Social */}
+          {/* Column 1: Logo */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Logo />
               <span className="font-headline text-lg font-bold text-foreground">Canggu Weekly</span>
-            </div>
-            <div className="mt-4 text-center md:text-left">
-                <h3 className="font-headline font-semibold text-foreground">Follow Us</h3>
-                <div className="mt-2 flex justify-center gap-4 md:justify-start">
-                <Link href="#" className="hover:text-primary">Facebook</Link>
-                <Link href="#" className="hover:text-primary">Instagram</Link>
-                <Link href="#" className="hover:text-primary">Twitter</Link>
-                </div>
             </div>
           </div>
 
