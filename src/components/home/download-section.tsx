@@ -76,15 +76,6 @@ export function DownloadSection() {
                             </div>
                         </CardContent>
                     </div>
-                    <div className="relative hidden h-full min-h-[300px] md:block">
-                        <Image 
-                            src={downloadImage.imageUrl}
-                            alt={downloadImage.description}
-                            fill
-                            className="object-cover rounded-r-lg"
-                            data-ai-hint={downloadImage.imageHint}
-                        />
-                    </div>
                 </div>
             </Card>
         </div>

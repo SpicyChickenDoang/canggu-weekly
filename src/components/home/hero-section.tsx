@@ -8,7 +8,7 @@ export function HeroSection() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'surf-spots') ?? PlaceHolderImages[3];
     
     return (
-        <section className="relative -mx-4 -mt-8">
+        <section>
             <div className="grid min-h-screen md:grid-cols-2">
                 <div className="relative hidden md:block">
                     <Image
@@ -29,9 +29,9 @@ export function HeroSection() {
                     </p>
                     <div className="flex items-center gap-4">
                         <Button asChild size="lg">
-                        <Link href="/archive">
+                        {/* <Link href="/archive">
                             Explore Issues <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
+                        </Link> */}
                         </Button>
                     </div>
                 </div>

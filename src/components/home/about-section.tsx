@@ -7,8 +7,8 @@ export function AboutSection() {
     const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
     
     return (
-        <section className="overflow-hidden rounded-lg bg-card">
-            <div className="grid md:grid-cols-2">
+        <section className="overflow-hidden">
+            <div className="grid md:grid-cols-2 min-h-screen">
             <div className="flex flex-col justify-center p-8 md:p-12">
                 <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Weekly</h2>
                 <p className="mb-4 text-muted-foreground">

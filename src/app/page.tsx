@@ -21,7 +21,6 @@ export default function Home() {
     <>
       <HeroSection />
       
-      <div className="container mx-auto space-y-16 px-4 py-8">
         <AboutSection />
 
         {/* <section>
@@ -38,7 +37,6 @@ export default function Home() {
         <HowToSection />
 
         <ContactSection />
-      </div>
     </>
   );
 }
