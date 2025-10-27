@@ -6,6 +6,7 @@ import { ArticleCard } from '@/components/article-card';
 import { ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { DownloadSection } from '@/components/download-section';
+import { ContactForm } from '@/components/contact-form';
 
 export default function Home() {
   const currentArticles = getArticlesByIssue(1);
@@ -94,6 +95,12 @@ export default function Home() {
       <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
         <div className="mx-auto max-w-md">
           <DownloadSection />
+        </div>
+      </section>
+
+      <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
+        <div className="mx-auto max-w-md">
+            <ContactForm />
         </div>
       </section>
     </div>
