@@ -18,25 +18,25 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className='flex flex-col gap-8 py-8'>
       <HeroSection />
       
-        <AboutSection />
+      <AboutSection />
 
-        {/* <section>
-          <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {currentArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-        </section> */}
+      {/* <section>
+        <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {currentArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+      </section> */}
 
-        <DownloadSection />
-        
-        <HowToSection />
+      <DownloadSection />
+      
+      <HowToSection />
 
-        <ContactSection />
-    </>
+      <ContactSection />
+    </div>
   );
 }

@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/select';
 import { Download } from 'lucide-react';
 import { getPdfFiles } from '@/lib/pdf';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function DownloadSection() {
@@ -38,47 +38,48 @@ export function DownloadSection() {
   };
 
   return (
-    <section>
-        <div className="mx-auto max-w-5xl">
-            <Card className="overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                    <div className='flex flex-col justify-center'>
-                        <CardHeader>
-                            <CardTitle className="font-headline text-3xl font-bold">Download Full Issues</CardTitle>
-                            <CardDescription>
-                            Select an article to download as a PDF.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="space-y-4">
-                            <Select onValueChange={setSelectedFile} value={selectedFile}>
-                                <SelectTrigger id="article-select-home">
-                                <SelectValue placeholder="Select a PDF to download" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                {pdfFiles.length > 0 ? (
-                                    pdfFiles.map((file) => (
-                                    <SelectItem key={file} value={file}>
-                                        {file.replace(/-/g, ' ').replace('.pdf', '')}
-                                    </SelectItem>
-                                    ))
-                                ) : (
-                                    <SelectItem value="loading" disabled>
-                                    Loading articles...
-                                    </SelectItem>
-                                )}
-                                </SelectContent>
-                            </Select>
-                            <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
-                                <Download className="mr-2 h-4 w-4" />
-                                Download PDF
-                            </Button>
-                            </div>
-                        </CardContent>
-                    </div>
+    <section className="overflow-hidden">
+        <div className="grid md:grid-cols-2 min-h-screen">
+            <div className='flex flex-col justify-center p-8 md:p-12'>
+                <h2 className="font-headline text-3xl font-bold mb-4">Download Full Issues</h2>
+                <p className="text-muted-foreground mb-6">
+                    Select an article to download as a PDF.
+                </p>
+                <div className="space-y-4">
+                    <Select onValueChange={setSelectedFile} value={selectedFile}>
+                        <SelectTrigger id="article-select-home">
+                        <SelectValue placeholder="Select a PDF to download" />
+                        </SelectTrigger>
+                        <SelectContent>
+                        {pdfFiles.length > 0 ? (
+                            pdfFiles.map((file) => (
+                            <SelectItem key={file} value={file}>
+                                {file.replace(/-/g, ' ').replace('.pdf', '')}
+                            </SelectItem>
+                            ))
+                        ) : (
+                            <SelectItem value="loading" disabled>
+                            Loading articles...
+                            </SelectItem>
+                        )}
+                        </SelectContent>
+                    </Select>
+                    <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download PDF
+                    </Button>
                 </div>
-            </Card>
-        </div>
+            </div>
+            <div className="relative hidden min-h-[300px] md:block">
+                <Image 
+                    src={downloadImage.imageUrl}
+                    alt={downloadImage.description}
+                    fill
+                    className="object-cover rounded-r-lg"
+                    data-ai-hint={downloadImage.imageHint}
+                />
+            </div>
+      </div>
     </section>
   );
 }
