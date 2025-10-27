@@ -40,6 +40,15 @@ export function DownloadSection() {
   return (
     <section className="overflow-hidden">
         <div className="grid md:grid-cols-2 min-h-screen">
+            <div className="relative hidden min-h-[300px] md:block">
+                <Image 
+                    src={downloadImage.imageUrl}
+                    alt={downloadImage.description}
+                    fill
+                    className="object-cover rounded-r-lg"
+                    data-ai-hint={downloadImage.imageHint}
+                />
+            </div>
             <div className='flex flex-col justify-center p-8 md:p-12'>
                 <h2 className="font-headline text-3xl font-bold mb-4">Download Full Issues</h2>
                 <p className="text-muted-foreground mb-6">
@@ -69,15 +78,6 @@ export function DownloadSection() {
                         Download PDF
                     </Button>
                 </div>
-            </div>
-            <div className="relative hidden min-h-[300px] md:block">
-                <Image 
-                    src={downloadImage.imageUrl}
-                    alt={downloadImage.description}
-                    fill
-                    className="object-cover rounded-r-lg"
-                    data-ai-hint={downloadImage.imageHint}
-                />
             </div>
       </div>
     </section>
