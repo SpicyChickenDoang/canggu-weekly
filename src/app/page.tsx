@@ -98,6 +98,18 @@ export default function Home() {
             <DownloadSection />
           </div>
         </section>
+        
+        <section className="rounded-lg bg-card p-8 text-center md:p-12">
+          <h2 className="mb-4 font-headline text-3xl font-bold">
+            How To: Get Your Advertising in The Canggu Weekly
+          </h2>
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, we can help you connect with our readers. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
+          </p>
+          <Button asChild className="mt-6">
+            <Link href="/contact">Contact Sales</Link>
+          </Button>
+        </section>
 
         <section>
           <div className="mx-auto max-w-lg">
