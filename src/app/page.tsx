@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArticleCard } from '@/components/article-card';
 import { ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { DownloadSection } from '@/components/download-section';
 
 export default function Home() {
   const featuredArticle = getFeaturedArticle(1);
@@ -82,12 +83,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-16">
         <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {currentArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
+        </div>
+      </section>
+
+      <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
+        <div className="mx-auto max-w-md">
+          <DownloadSection />
         </div>
       </section>
     </div>
