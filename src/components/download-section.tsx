@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -12,10 +13,12 @@ import {
 import { Download } from 'lucide-react';
 import { getPdfFiles } from '@/lib/pdf';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function DownloadSection() {
   const [pdfFiles, setPdfFiles] = useState<string[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
+  const downloadImage = PlaceHolderImages.find(p => p.id === 'download-image') ?? PlaceHolderImages[0];
 
   useEffect(() => {
     async function fetchFiles() {
@@ -35,39 +38,52 @@ export function DownloadSection() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="font-headline text-3xl font-bold">Download Full Issues</CardTitle>
-        <CardDescription>
-          Select an article to download as a PDF.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <Select onValueChange={setSelectedFile} value={selectedFile}>
-            <SelectTrigger id="article-select-home">
-              <SelectValue placeholder="Select a PDF to download" />
-            </SelectTrigger>
-            <SelectContent>
-              {pdfFiles.length > 0 ? (
-                pdfFiles.map((file) => (
-                  <SelectItem key={file} value={file}>
-                    {file.replace(/-/g, ' ').replace('.pdf', '')}
-                  </SelectItem>
-                ))
-              ) : (
-                <SelectItem value="loading" disabled>
-                  Loading articles...
-                </SelectItem>
-              )}
-            </SelectContent>
-          </Select>
-          <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
-            <Download className="mr-2 h-4 w-4" />
-            Download PDF
-          </Button>
+    <Card className="overflow-hidden">
+      <div className="grid md:grid-cols-2">
+        <div className="relative hidden h-full min-h-[300px] md:block">
+            <Image 
+                src={downloadImage.imageUrl}
+                alt={downloadImage.description}
+                fill
+                className="object-cover"
+                data-ai-hint={downloadImage.imageHint}
+            />
         </div>
-      </CardContent>
+        <div className='flex flex-col'>
+            <CardHeader>
+                <CardTitle className="font-headline text-3xl font-bold">Download Full Issues</CardTitle>
+                <CardDescription>
+                Select an article to download as a PDF.
+                </CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className="space-y-4">
+                <Select onValueChange={setSelectedFile} value={selectedFile}>
+                    <SelectTrigger id="article-select-home">
+                    <SelectValue placeholder="Select a PDF to download" />
+                    </SelectTrigger>
+                    <SelectContent>
+                    {pdfFiles.length > 0 ? (
+                        pdfFiles.map((file) => (
+                        <SelectItem key={file} value={file}>
+                            {file.replace(/-/g, ' ').replace('.pdf', '')}
+                        </SelectItem>
+                        ))
+                    ) : (
+                        <SelectItem value="loading" disabled>
+                        Loading articles...
+                        </SelectItem>
+                    )}
+                    </SelectContent>
+                </Select>
+                <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
+                </Button>
+                </div>
+            </CardContent>
+        </div>
+      </div>
     </Card>
   );
 }

@@ -55,8 +55,8 @@ export default function Home() {
         </div>
       </section>
       
-      <div className="container mx-auto px-4 py-8">
-        <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
+      <div className="container mx-auto space-y-16 px-4 py-8">
+        <section className="rounded-lg bg-card p-8 md:p-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="flex flex-col justify-center md:col-span-2">
               <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Current</h2>
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-16">
+        <section>
           <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {currentArticles.map((article) => (
@@ -93,13 +93,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
-          <div className="mx-auto max-w-md">
+        <section>
+          <div className="mx-auto max-w-5xl">
             <DownloadSection />
           </div>
         </section>
 
-        <section className="mb-16">
+        <section>
           <div className="mx-auto max-w-lg">
               <ContactForm />
           </div>

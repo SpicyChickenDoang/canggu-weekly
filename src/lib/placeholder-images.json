@@ -39,7 +39,7 @@
     {
       "id": "local-market",
       "description": "A vibrant local market with fresh produce and crafts.",
-      "imageUrl": "https://images.unsplash.com/photo-1572402123736-c79526db405a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2NhbCUyMG1hcmtldHxlbnwwfHx8fDE3NjE1MTM1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1572402123736-c79526db405a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2NhbCUyMG1hcmtldHxlbnwwfHx8fDE3NjE1MTM1OTB8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "local market"
     },
     {
@@ -51,26 +51,32 @@
     {
       "id": "yoga-studio",
       "description": "A peaceful yoga studio with a view of tropical plants.",
-      "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b2dhJTIwc3R1ZGlvfGVufDB8fHx8MTc2MTQ5NTI5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b2dhJTIwc3R1ZGlvfGVufDB8fHx8MTc2MTQ5NTI5N3ww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "yoga studio"
     },
     {
       "id": "balinese-food",
       "description": "A delicious spread of traditional Balinese food.",
-      "imageUrl": "https://images.unsplash.com/photo-1680345576151-bbc497ba969e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmFkaXRpb25hbCUyMGZvb2R8ZW58MHx8fHwxNzYxNTMxMDc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1680345576151-bbc497ba969e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmFkaXRpb25hbCUyMGZvb2R8ZW58MHx8fHwxNzYxNTMxMDc3fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "traditional food"
     },
     {
       "id": "archive-1",
       "description": "An old newspaper or magazine.",
-      "imageUrl": "https://images.unsplash.com/photo-1720643249247-bfc5c0ce7b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcmNoaXZlJTIwcGFwZXJ8ZW58MHx8fHwxNzYxNTMxMDc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1720643249247-bfc5c0ce7b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcmNoaXZlJTIwcGFwZXJ8ZW58MHx8fHwxNzYxNTMxMDc3fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "archive paper"
     },
     {
       "id": "404-image",
       "description": "A lost surfboard on a beach.",
-      "imageUrl": "https://images.unsplash.com/photo-1651316879927-9ce99d03687f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsb3N0JTIwc3VyZmJvYXJkfGVufDB8fHx8MTc2MTUzMTA3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1651316879927-9ce99d03687f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsb3N0JTIwc3VyZmJvYXJkfGVufDB8fHx8MTc2MTUzMTA3N3ww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "lost surfboard"
+    },
+    {
+      "id": "download-image",
+      "description": "A person reading a magazine, to be used in the download section.",
+      "imageUrl": "https://images.unsplash.com/photo-1673334902706-477b649e89cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyZWFkaW5nJTIwbWFnYXppbmV8ZW58MHx8fHwxNzYxNTQ4OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "reading magazine"
     }
   ]
 }
