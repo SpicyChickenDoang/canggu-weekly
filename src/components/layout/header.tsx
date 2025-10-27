@@ -24,7 +24,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-primary text-primary-foreground">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -39,8 +39,8 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors hover:text-foreground/80',
-                  pathname === link.href ? 'text-foreground' : 'text-foreground/60'
+                  'transition-colors hover:text-primary-foreground/80',
+                  pathname === link.href ? 'text-primary-foreground' : 'text-primary-foreground/60'
                 )}
               >
                 {link.label}
@@ -52,12 +52,12 @@ export function Header() {
         {/* Mobile Nav */}
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button variant="ghost" size="icon" className="md:hidden hover:bg-primary/80">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent side="left" className="bg-primary text-primary-foreground">
             <Link href="/" className="mb-8 flex items-center">
                 <Logo />
                 <span className="ml-2 font-bold font-headline">Canggu Current</span>
@@ -68,8 +68,8 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'text-lg font-medium transition-colors hover:text-primary',
-                    pathname === link.href ? 'text-foreground' : 'text-muted-foreground'
+                    'text-lg font-medium transition-colors hover:text-primary-foreground/80',
+                    pathname === link.href ? 'text-primary-foreground' : 'text-primary-foreground/60'
                   )}
                 >
                   {link.label}
