@@ -98,8 +98,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mb-16 rounded-lg bg-card p-8 md:p-12">
-        <div className="mx-auto max-w-md">
+      <section className="mb-16">
+        <div className="mx-auto max-w-lg">
             <ContactForm />
         </div>
       </section>

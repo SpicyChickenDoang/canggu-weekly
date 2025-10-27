@@ -7,13 +7,6 @@ import { z } from 'zod';
 import { contactAction } from '@/actions/contact';
 import { Button } from '@/components/ui/button';
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import {
   Form,
   FormControl,
   FormField,
@@ -61,12 +54,12 @@ export function ContactForm() {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="font-headline text-3xl font-bold">Contact Us</CardTitle>
-        <CardDescription>Have a question or a story tip? Drop us a line!</CardDescription>
-      </CardHeader>
-      <CardContent>
+    <div>
+      <div className="mb-6 text-center">
+        <h2 className="font-headline text-3xl font-bold">Contact Us</h2>
+        <p className="text-muted-foreground">Have a question or a story tip? Drop us a line!</p>
+      </div>
+      <div>
         {result ? (
           <Alert
             variant={result.success ? 'default' : 'destructive'}
@@ -82,33 +75,35 @@ export function ContactForm() {
           </Alert>
         ) : (
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="your.email@example.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="your.email@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
                 name="message"
@@ -118,7 +113,7 @@ export function ContactForm() {
                     <FormControl>
                       <Textarea
                         placeholder="Your message here..."
-                        className="min-h-32"
+                        className="min-h-24"
                         {...field}
                       />
                     </FormControl>
@@ -137,7 +132,7 @@ export function ContactForm() {
             </form>
           </Form>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
