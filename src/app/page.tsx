@@ -12,6 +12,7 @@ export default function Home() {
   const currentArticles = getArticlesByIssue(1);
   const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
   const heroImage = PlaceHolderImages.find(p => p.id === 'surf-spots') ?? PlaceHolderImages[3];
+  const howToImage = PlaceHolderImages.find(p => p.id === 'archive-1') ?? PlaceHolderImages[10];
 
 
   if (!currentArticles || currentArticles.length === 0) {
@@ -99,16 +100,31 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="rounded-lg bg-card p-8 text-center md:p-12">
-          <h2 className="mb-4 font-headline text-3xl font-bold">
-            How To: Get Your Advertising in The Canggu Weekly
-          </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, we can help you connect with our readers. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
-          </p>
-          <Button asChild className="mt-6">
-            <Link href="/contact">Contact Sales</Link>
-          </Button>
+        <section className="overflow-hidden rounded-lg bg-card">
+            <div className="grid md:grid-cols-2">
+                <div className="relative hidden min-h-[300px] w-full md:block">
+                  <Image
+                    src={howToImage.imageUrl}
+                    alt={howToImage.description}
+                    fill
+                    className="rounded-l-lg object-cover"
+                    data-ai-hint={howToImage.imageHint}
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-8 text-center md:p-12 md:text-left">
+                    <h2 className="mb-4 font-headline text-3xl font-bold">
+                        How To: Get Your Advertising in The Canggu Weekly
+                    </h2>
+                    <p className="mx-auto max-w-2xl text-muted-foreground">
+                        Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, we can help you connect with our readers. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
+                    </p>
+                    <div className="mt-6 flex justify-center md:justify-start">
+                        <Button asChild>
+                            <Link href="/contact">Contact Sales</Link>
+                        </Button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section>

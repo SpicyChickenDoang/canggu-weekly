@@ -40,16 +40,7 @@ export function DownloadSection() {
   return (
     <Card className="overflow-hidden">
       <div className="grid md:grid-cols-2">
-        <div className="relative hidden h-full min-h-[300px] md:block">
-            <Image 
-                src={downloadImage.imageUrl}
-                alt={downloadImage.description}
-                fill
-                className="object-cover"
-                data-ai-hint={downloadImage.imageHint}
-            />
-        </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col justify-center'>
             <CardHeader>
                 <CardTitle className="font-headline text-3xl font-bold">Download Full Issues</CardTitle>
                 <CardDescription>
@@ -82,6 +73,15 @@ export function DownloadSection() {
                 </Button>
                 </div>
             </CardContent>
+        </div>
+        <div className="relative hidden h-full min-h-[300px] md:block">
+            <Image 
+                src={downloadImage.imageUrl}
+                alt={downloadImage.description}
+                fill
+                className="object-cover rounded-r-lg"
+                data-ai-hint={downloadImage.imageHint}
+            />
         </div>
       </div>
     </Card>
