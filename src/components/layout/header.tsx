@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/archive', label: 'Archive' },
   { href: '/favorites', label: 'Favorites' },
   { href: '/about', label: 'About Us' },
+  { href: '/download-article', label: 'Download' },
   { href: '/admin/image-suggester', label: 'Image Suggester' },
 ];
 
