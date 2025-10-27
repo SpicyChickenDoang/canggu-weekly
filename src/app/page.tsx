@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/home/hero-section';
 import { AboutSection } from '@/components/home/about-section';
 import { DownloadSection } from '@/components/home/download-section';
 import { HowToSection } from '@/components/home/how-to-section';
+import { StatsSection } from '@/components/home/StatsSection';
 import { ContactSection } from '@/components/home/contact-section';
 
 export default function Home() {
@@ -35,6 +36,8 @@ export default function Home() {
       <DownloadSection />
       
       <HowToSection />
+
+      <StatsSection />
 
       <ContactSection />
     </div>
