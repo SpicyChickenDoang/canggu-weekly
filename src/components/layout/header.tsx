@@ -11,12 +11,12 @@ import { SearchForm } from '../search-form';
 import { Logo } from '../logo';
 
 const navLinks = [
-  { href: '/', label: 'Current Issue' },
-  { href: '/archive', label: 'Archive' },
-  { href: '/favorites', label: 'Favorites' },
+  // { href: '/', label: 'Current Issue' },
+  // { href: '/archive', label: 'Archive' },
+  // { href: '/favorites', label: 'Favorites' },
   { href: '/about', label: 'About Us' },
   { href: '/download-article', label: 'Download' },
-  { href: '/admin/image-suggester', label: 'Image Suggester' },
+  // { href: '/admin/image-suggester', label: 'Image Suggester' },
   { href: '/admin/upload-article', label: 'Upload Article' },
 ];
 
@@ -30,7 +30,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo />
             <span className="hidden font-bold sm:inline-block font-headline">
-              Canggu Current
+              Canggu Weekly
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -60,7 +60,7 @@ export function Header() {
           <SheetContent side="left" className="bg-primary text-primary-foreground">
             <Link href="/" className="mb-8 flex items-center">
                 <Logo />
-                <span className="ml-2 font-bold font-headline">Canggu Current</span>
+                <span className="ml-2 font-bold font-headline">Canggu Weekly</span>
             </Link>
             <nav className="flex flex-col space-y-6">
               {navLinks.map((link) => (

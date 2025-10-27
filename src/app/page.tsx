@@ -42,7 +42,7 @@ export default function Home() {
                   Your Weekly Dose of Paradise
               </h1>
               <p className="mb-6 max-w-lg text-lg text-muted-foreground">
-                  Welcome to Canggu Current, your premier digital guide to the vibrant heart of Bali. Discover the latest stories in local culture, surf, and food.
+                  Welcome to Canggu Weekly, your premier digital guide to the vibrant heart of Bali. Discover the latest stories in local culture, surf, and food.
               </p>
               <div className="flex items-center gap-4">
                   <Button asChild size="lg">
@@ -59,7 +59,7 @@ export default function Home() {
         <section className="rounded-lg bg-card p-8 md:p-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="flex flex-col justify-center md:col-span-2">
-              <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Current</h2>
+              <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Weekly</h2>
               <p className="mb-4 text-muted-foreground">
                 Welcome to your premier digital guide to the vibrant heart of Bali. We are a passionate team of writers, photographers, and surfers dedicated to bringing you the most authentic and up-to-date stories from Canggu and beyond.
               </p>
@@ -84,14 +84,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h2 className="mb-8 font-headline text-3xl font-bold">This Week's Stories</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {currentArticles.map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}
           </div>
-        </section>
+        </section> */}
 
         <section>
           <div className="mx-auto max-w-5xl">

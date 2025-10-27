@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Canggu Current',
+  title: 'Canggu Weekly',
   description: 'A modern, tropical-themed weekly digital magazine for local news and culture in Canggu.',
 };
 

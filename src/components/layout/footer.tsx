@@ -9,16 +9,10 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Logo />
-              <span className="font-headline text-lg font-bold">Canggu Current</span>
+              <span className="font-headline text-lg font-bold">Canggu Weekly</span>
             </div>
             <p className="mt-4 text-center text-sm leading-loose text-muted-foreground md:text-left">
-              © {new Date().getFullYear()} Canggu Current. All Rights Reserved.
-            </p>
-          </div>
-          <div className="text-center md:text-left">
-            <h3 className="font-headline font-semibold">About Us</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Your weekly guide to the vibrant life in Canggu. We share stories about local culture, surf, food, and the people who make this place unique.
+              © {new Date().getFullYear()} Canggu Weekly. All Rights Reserved.
             </p>
           </div>
           <div className="text-center md:text-right">
