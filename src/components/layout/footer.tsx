@@ -15,12 +15,22 @@ export function Footer() {
               © {new Date().getFullYear()} Canggu Weekly. All Rights Reserved.
             </p>
           </div>
-          <div className="text-center md:text-right">
+
+          <div className="text-center">
             <h3 className="font-headline font-semibold">Follow Us</h3>
-            <div className="mt-2 flex justify-center gap-4 md:justify-end">
+            <div className="mt-2 flex justify-center gap-4">
               <Link href="#" className="text-muted-foreground hover:text-primary">Facebook</Link>
               <Link href="#" className="text-muted-foreground hover:text-primary">Instagram</Link>
-              <Link href="#" className="text-muted-foreground hover:to-primary">Twitter</Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary">Twitter</Link>
+            </div>
+          </div>
+
+          <div className="text-center md:text-right">
+            <h3 className="font-headline font-semibold">Navigate</h3>
+            <div className="mt-2 flex flex-col items-center gap-2 md:items-end">
+              <Link href="/about" className="text-muted-foreground hover:text-primary">About</Link>
+              <Link href="/download-article" className="text-muted-foreground hover:text-primary">Download</Link>
+              <Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link>
             </div>
           </div>
         </div>
