@@ -43,9 +43,9 @@ export default function Home() {
 
       <ClientsSection />
 
-      <ContactSection />
-
       <GoogleMaps />
+
+      <ContactSection />
     </div>
   );
 }
