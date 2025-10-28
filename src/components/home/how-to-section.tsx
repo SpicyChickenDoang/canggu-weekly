@@ -14,7 +14,7 @@ export function HowToSection() {
                         How To: Get Your Advertising in The Canggu Weekly
                     </h2>
                     <p className="mx-auto max-w-2xl text-muted-foreground">
-                        Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, we can help you connect with our readers. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
+                        Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, <span className='text-amber-500 font-bold'>we can help you connect with our readers</span>. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
                     </p>
                     <div className="mt-6 flex justify-center md:justify-start">
                         <Button asChild>
@@ -22,7 +22,7 @@ export function HowToSection() {
                         </Button>
                     </div>
                 </div>
-                <div className="relative hidden min-h-[300px] w-full md:block">
+                <div className="relative hidden min-h-screen w-full md:block">
                     <Image
                     src={howToImage.imageUrl}
                     alt={howToImage.description}

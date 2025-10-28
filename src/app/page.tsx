@@ -5,6 +5,7 @@ import { DownloadSection } from '@/components/home/download-section';
 import { HowToSection } from '@/components/home/how-to-section';
 import { StatsSection } from '@/components/home/StatsSection';
 import { ContactSection } from '@/components/home/contact-section';
+import GoogleMaps from '@/components/GoogleMaps';
 
 export default function Home() {
   const currentArticles = getArticlesByIssue(1);
@@ -40,6 +41,8 @@ export default function Home() {
       <StatsSection />
 
       <ContactSection />
+
+      <GoogleMaps />
     </div>
   );
 }

@@ -12,7 +12,8 @@ export function HeroSection() {
     <section className="relative flex h-screen min-h-[700px] w-full items-center justify-center text-white">
       {/* Background Image */}
       <Image
-        src={heroImage.imageUrl}
+        src={"/images/cover.png"}
+        // src={heroImage.imageUrl}
         alt="Canggu Weekly Cover"
         fill
         className="object-cover"
@@ -26,15 +27,17 @@ export function HeroSection() {
       <div className="relative z-10 grid h-full w-full max-w-6xl grid-cols-12 grid-rows-6 gap-4 p-8 md:p-12">
         {/* Masthead */}
         <div className="col-span-12 row-start-1 flex items-start justify-center">
-          <h1 className="font-headline text-5xl font-extrabold uppercase tracking-widest md:text-7xl">
-            Canggu Weekly
-          </h1>
+          <Image 
+            src={"/images/logo-transparent.png"}
+            width={900}
+            height={900}
+            alt="canggu weekly logo"/>
         </div>
 
         {/* Issue Details */}
-        <div className="col-span-12 row-start-2 flex justify-between text-xs uppercase tracking-wider text-white/80 md:text-sm">
-          <span>{currentIssue.title}</span>
-          <span>{format(new Date(currentIssue.publicationDate), 'MMMM d, yyyy')}</span>
+        <div className="col-span-12 row-start-2 flex justify-between text-md uppercase tracking-wider text-white/80 md:text-lg mt-10">
+          <span>Vol. 1: The Heart of Canggu</span>
+          <span>{format(new Date(), 'MMMM d, yyyy')}</span>
         </div>
 
         {/* Main Headline */}
@@ -47,7 +50,7 @@ export function HeroSection() {
         )}
 
         {/* Smaller Headlines */}
-        <div className="col-span-12 row-span-2 row-start-5 self-end space-y-4 text-right md:col-span-5 md:col-start-8">
+        <div className="col-span-12 row-span-2 row-start-4 self-end space-y-4 text-right md:col-span-5 md:col-start-8">
             {articles[1] && (
                 <p className="font-headline text-lg font-semibold uppercase md:text-2xl">
                     {articles[1].title.replace("A Guide to Canggu's", "")}

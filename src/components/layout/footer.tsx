@@ -10,7 +10,6 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <Logo />
-              <span className="font-headline text-lg font-bold text-foreground">Canggu Weekly</span>
             </div>
             <p className="mt-4 text-sm">
               Jl. Danau Poso 38, <br />

@@ -23,6 +23,8 @@ export function DownloadSection() {
   useEffect(() => {
     async function fetchFiles() {
       const files = await getPdfFiles();
+      console.log(files);
+      
       setPdfFiles(files);
       if (files.length > 0) {
         setSelectedFile(files[0]);

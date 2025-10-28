@@ -5,7 +5,7 @@ import path from 'path';
 
 export async function getPdfFiles(): Promise<string[]> {
   try {
-    const pdfDir = path.join(process.cwd(), 'public', 'article-pdfs');
+    const pdfDir = path.join(process.cwd(), 'data', 'article-pdfs');
     const files = await fs.readdir(pdfDir);
     return files.filter((file) => file.endsWith('.pdf'));
   } catch (error) {
