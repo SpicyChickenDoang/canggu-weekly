@@ -15,7 +15,7 @@ export function StatsSection() {
             <p className="text-4xl font-bold">729</p>
             <p className="text-muted-foreground">Editions Published</p>
           </div>
-          <div className="rounded-lg bg-card p-6 shadow-md">
+          <div className="rounded-lg bg-card p-6 shadow-md overflow-scroll">
             <Newspaper className="mx-auto mb-3 h-12 w-12 text-primary" />
             <p className="text-4xl font-bold">~37,000,000</p>
             <p className="text-muted-foreground">Single Pages Printed</p>
