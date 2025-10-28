@@ -6,6 +6,7 @@ import { HowToSection } from '@/components/home/how-to-section';
 import { StatsSection } from '@/components/home/StatsSection';
 import { ContactSection } from '@/components/home/contact-section';
 import GoogleMaps from '@/components/GoogleMaps';
+import { ClientsSection } from '@/components/home/clients-section';
 
 export default function Home() {
   const currentArticles = getArticlesByIssue(1);
@@ -39,6 +40,8 @@ export default function Home() {
       <HowToSection />
 
       <StatsSection />
+
+      <ClientsSection />
 
       <ContactSection />
 
