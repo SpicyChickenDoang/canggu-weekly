@@ -49,15 +49,18 @@ export function Header() {
         {/* Mobile Nav */}
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden hover:bg-primary/80">
-              <Menu className="h-5 w-5" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden hover:bg-primary/80 flex justify-between w-full h-auto p-2">
+              <Logo />
+              <Menu className="h-10 w-10" style={{ width: "30px", height: "30px" }} />
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="bg-primary text-primary-foreground">
             <Link href="/" className="mb-8 flex items-center">
-                <Logo />
-                <span className="ml-2 font-bold font-headline">Canggu Weekly</span>
+              <Logo />
             </Link>
             <nav className="flex flex-col space-y-6">
               {navLinks.map((link) => (
@@ -75,7 +78,7 @@ export function Header() {
             </nav>
           </SheetContent>
         </Sheet>
-        
+
         {/* <div className="flex flex-1 items-center justify-end space-x-4">
             <SearchForm />
         </div> */}

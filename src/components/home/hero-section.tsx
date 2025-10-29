@@ -26,12 +26,16 @@ export function HeroSection() {
       {/* Magazine Content */}
       <div className="relative z-10 grid h-full w-full max-w-6xl grid-cols-12 grid-rows-6 gap-4 p-8 md:p-12">
         {/* Masthead */}
-        <div className="col-span-12 row-start-1 flex items-start justify-center">
-          <Image 
+        <div className="col-span-12 w-full flex items-start justify-center">
+          <Image
             src={"/images/logo-transparent.png"}
             width={900}
             height={900}
-            alt="canggu weekly logo"/>
+            alt="canggu weekly logo"
+            // 🔑 THE FIX: Force Image to be block-level and max out the container width
+            // The width and height values are now just for optimization/aspect ratio.
+            className=""
+          />
         </div>
 
         {/* Issue Details */}
@@ -51,16 +55,16 @@ export function HeroSection() {
 
         {/* Smaller Headlines */}
         <div className="col-span-12 row-span-2 row-start-4 self-end space-y-4 text-right md:col-span-5 md:col-start-8">
-            {articles[1] && (
-                <p className="font-headline text-lg font-semibold uppercase md:text-2xl">
-                    {articles[1].title.replace("A Guide to Canggu's", "")}
-                </p>
-            )}
-            {articles[2] && (
-                <p className="font-headline text-base font-medium uppercase md:text-xl text-white/80">
-                    Plus: {articles[2].title}
-                </p>
-            )}
+          {articles[1] && (
+            <p className="font-headline text-lg font-semibold uppercase md:text-2xl">
+              {articles[1].title.replace("A Guide to Canggu's", "")}
+            </p>
+          )}
+          {articles[2] && (
+            <p className="font-headline text-base font-medium uppercase md:text-xl text-white/80">
+              Plus: {articles[2].title}
+            </p>
+          )}
         </div>
       </div>
     </section>

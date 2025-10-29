@@ -65,7 +65,7 @@ const ClientLogo = ({ name, src, url }: { name: string; src: string, url: string
 
 export function ClientsSection() {
   return (
-    <section className="py-20">
+    <section className="py-10 bg-muted">
       <div className="container mx-auto px-4 text-center">
         <h2 className="mb-4 font-headline text-3xl font-bold">Our Happy Clients</h2>
         <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">

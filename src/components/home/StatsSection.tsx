@@ -2,7 +2,7 @@ import { Users, Newspaper, Smile, Coffee } from 'lucide-react';
 
 export function StatsSection() {
   return (
-    <section className="bg-muted py-20">
+    <section className="bg-card py-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-px rounded-lg border bg-card text-center shadow-md md:grid-cols-4">
           <div className="p-6">
