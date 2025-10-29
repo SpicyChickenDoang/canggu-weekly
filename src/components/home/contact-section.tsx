@@ -54,7 +54,7 @@ export function ContactSection() {
   }
 
   return (
-    <section>
+    <section id="contact">
         <div className="mx-auto max-w-lg my-10 p-8">
             <div>
                 <div className="mb-6 text-center">

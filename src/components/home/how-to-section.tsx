@@ -21,7 +21,7 @@ export function HowToSection() {
                     </p>
                     <div className="mt-6 flex justify-center md:justify-start">
                         <Button asChild>
-                            <Link href="/contact">Contact Sales</Link>
+                            <Link href="#contact">Contact Sales</Link>
                         </Button>
                     </div>
                 </div>
