@@ -1,25 +1,35 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import TextType from '@/components/TextType';
 
 export default function AboutPage() {
   const image = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
-  
+
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-12">
+    <section className="container my-10 max-w-4xl px-4 py-12 border-[3px] border-yellow-600 border-dashed">
       <header className="mb-12 text-center">
-        <h1 className="font-headline text-5xl font-bold">About Canggu Weekly</h1>
+        <h1 className="font-headline text-5xl font-bold">
+          <TextType
+            text={["About Canggu Weekly", "Your Essential Canggu Pulse", "Your Definitive Canggu Story!"]}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            startOnVisible={true}
+            cursorCharacter="|"
+          />
+        </h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Your weekly dose of paradise.
         </p>
       </header>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="relative h-96 w-full">
+        <div className="relative h-full w-full">
           <Image
             src={"/images/img-5.webp"}
             alt="Canggu Weekly Team"
             fill
-            className="rounded-lg object-cover"
+            className="object-cover"
             data-ai-hint={image.imageHint}
           />
         </div>
@@ -35,6 +45,6 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
