@@ -9,7 +9,7 @@
     {
       "id": "issue-2-cover",
       "description": "Cover for the second issue, with a focus on ocean waves.",
-      "imageUrl": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvY2VhbiUyMHdhdmVzfGVufDB8fHx8MTc2MTQ0NDQxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvY2VhbiUyMHdhdmVzfGVufDB8fHx8fDE3NjE0NDQ0xNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ocean waves"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "cafe-culture",
       "description": "A stylish, modern cafe interior with people enjoying coffee.",
-      "imageUrl": "https://images.unsplash.com/photo-1638422402187-71680ee88083?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBjYWZlfGVufDB8fHx8MTc2MTQ5NDc3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1638422402187-71680ee88083?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBjYWZlfGVufDB8fHx8fDE3NjE0OTQ3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern cafe"
     },
     {
@@ -51,7 +51,7 @@
     {
       "id": "yoga-studio",
       "description": "A peaceful yoga studio with a view of tropical plants.",
-      "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b2dhJTIwc3R1ZGlvfGVufDB8fHx8MTc2MTQ5NTI5N3ww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b2dhJTIwc3R1ZGlvfGVufDB8fHx8fDE3NjE0OTUyOTd8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "yoga studio"
     },
     {
@@ -81,7 +81,7 @@
     {
       "id": "clients-image",
       "description": "People collaborating in a business meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzYxNTk4MjMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzYxNTk4MjMwfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "business meeting"
     },
     {
@@ -89,6 +89,12 @@
       "description": "A person writing a letter.",
       "imageUrl": "https://images.unsplash.com/photo-1518665796313-c155d0a1b6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3cml0aW5nJTIwbGV0dGVyfGVufDB8fHx8MTc2MTg0NTAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "writing letter"
+    },
+    {
+      "id": "gmaps-image",
+      "description": "A person looking at a map.",
+      "imageUrl": "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBsb29raW5nJTIwYXQlMjBhJTIwbWFwfGVufDB8fHx8MTc2MTg1MTA0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person map"
     }
   ]
 }
