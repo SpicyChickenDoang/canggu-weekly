@@ -29,7 +29,7 @@ const articles: Article[] = [
   {
     id: 1,
     slug: 'canggus-best-surf-spots',
-    title: "Canggu's Best Surf Spots for Every Level",
+    title: "Canggu's Best Cold-Pressed Juice Spots",
     author: 'Admin',
     publicationDate: '2024-07-22',
     excerpt: 'From gentle waves for beginners to challenging breaks for the pros, discover the top surf spots in Canggu.',
@@ -47,7 +47,7 @@ const articles: Article[] = [
   {
     id: 2,
     slug: 'a-guide-to-canggus-cafe-culture',
-    title: "A Guide to Canggu's Vibrant Cafe Culture",
+    title: "Canggu's Best Pizza Palace",
     author: 'Admin',
     publicationDate: '2024-07-22',
     excerpt: 'Explore the bustling cafe scene of Canggu, where great coffee, healthy food, and digital nomad culture collide.',
@@ -65,7 +65,7 @@ const articles: Article[] = [
   {
     id: 3,
     slug: 'discover-tanah-lot-temple',
-    title: 'Sunset Magic: A Visit to Tanah Lot Temple',
+    title: 'Have You Tried Il Forno?',
     author: 'Admin',
     publicationDate: '2024-07-22',
     excerpt: 'Just a short drive from Canggu, the iconic sea temple of Tanah Lot offers one of Bali’s most breathtaking sunset views.',
