@@ -7,7 +7,7 @@ export function HowToSection() {
     const howToImage = PlaceHolderImages.find(p => p.id === 'archive-1') ?? PlaceHolderImages[10];
 
     return (
-        <section className="overflow-hidden rounded-lg bg-card">
+        <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
             <div className="flex flex-col md:flex-row">
                 <div className="flex flex-col justify-center p-8 text-center md:p-12 md:text-left md:w-1/2">
                     <h2 className="font-headline text-3xl font-bold">
@@ -30,7 +30,7 @@ export function HowToSection() {
                         src={howToImage.imageUrl}
                         alt={howToImage.description}
                         fill
-                        className="rounded-r-lg object-cover"
+                        className="object-cover"
                     />
                 </div>
             </div>

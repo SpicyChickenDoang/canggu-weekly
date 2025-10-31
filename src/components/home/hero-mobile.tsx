@@ -3,15 +3,15 @@ import { getArticlesByIssue, getIssues } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { format } from 'date-fns';
 
-export default function HeroSection() {
+export default function HeroMobile() {
   const currentIssue = getIssues()[0];
   const articles = getArticlesByIssue(currentIssue.id);
   const heroImage = PlaceHolderImages.find(p => p.id === 'issue-1-cover') ?? PlaceHolderImages[0];
 
   return (
-    <section className="relative flex h-screen min-h-[700px] w-full items-center justify-center text-white mb-8">
+    <section className="relative flex h-screen min-h-[700px] w-full items-center justify-center text-white">
       <Image
-        src={"/images/2-min.webp"}
+        src={"/images/1-min.webp"}
         alt="Canggu Weekly Cover"
         fill
         className="object-cover"
@@ -20,34 +20,15 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 flex flex-col h-full w-full max-w-6xl gap-4 p-8 md:p-12">
-
-        <div className="flex justify-center w-full">
-          {/* 🔑 New RELATIVE container wrapper for the image and floating text */}
-          <div className="relative">
-
-            {/* The Image itself */}
-            <Image
-              src={"/images/logo-transparent.png"}
-              width={1000}
-              height={1000}
-              alt="canggu weekly logo"
-              // Remove the width/height classes from the image itself, 
-              // letting the relative parent control the size.
-              className="h-auto w-full"
-            />
-
-            {/* 1. Sentence 1: Top Left */}
-            <div className="absolute top-0 left-0 p-2 text-yellow-400 text-md">
-              News & Advertising Magazines for Canggu & Surroundings
-            </div>
-
-            {/* 2. Sentence 2: Bottom Right */}
-            <div className="absolute bottom-[-10] right-0 p-2 text-white text-md">
-              "Exploring Life, People and Places Around Bali's Coolest Coastline"
-            </div>
-
-          </div>
+      <div className="relative z-10 flex flex-col h-full w-full max-w-6xl gap-4 p-8">
+        <div className="flex justify-center w-full mt-[5rem]">
+          <Image
+            src={"/images/logo-transparent.png"}
+            width={1000}
+            height={1000}
+            alt="canggu weekly logo"
+            className="h-full w-full"
+          />
         </div>
 
         <div className="flex justify-between w-full uppercase tracking-wider text-white/80 mt-10">
@@ -55,7 +36,7 @@ export default function HeroSection() {
           <span>{format(new Date(), 'MMMM d, yyyy')}</span>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full mt-[12rem]">
+        <div className="flex flex-col md:flex-row w-full mt-[8rem]">
           {articles[0] && (
             <div className="w-full md:w-7/12 self-center">
               <h2 className="font-headline text-3xl font-bold uppercase leading-tight md:text-5xl">

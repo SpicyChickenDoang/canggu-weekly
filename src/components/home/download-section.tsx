@@ -40,7 +40,7 @@ export function DownloadSection() {
   };
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden border-black mx-5 my-[10px] border-dashed border-[3px]">
       <div className="flex flex-col md:flex-row md:min-h-screen">
 
         <div className="relative w-1/2 hidden md:block min-h-[300px] md:min-h-screen">

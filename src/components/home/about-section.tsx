@@ -7,7 +7,7 @@ export function AboutSection() {
     const aboutImage = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
     
     return (
-        <section className="overflow-hidden">
+        <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
             <div className="flex flex-col md:flex-row md:min-h-screen">
                 <div className="flex flex-col justify-center p-8 md:p-12 md:w-1/2">
                     <h2 className="mb-4 font-headline text-3xl font-bold">About Canggu Weekly</h2>

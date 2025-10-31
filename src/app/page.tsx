@@ -1,5 +1,5 @@
 import { getArticlesByIssue } from '@/lib/data';
-import { HeroSection } from '@/components/home/hero-section';
+import { Hero } from '@/components/home/hero';
 import { AboutSection } from '@/components/home/about-section';
 import { DownloadSection } from '@/components/home/download-section';
 import { HowToSection } from '@/components/home/how-to-section';
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col'>
-      <HeroSection />
+      <Hero />
       
       <AboutSection />
 
