@@ -43,7 +43,7 @@ export function DownloadSection() {
     <section className="overflow-hidden border-black mx-5 my-[10px] border-dashed border-[3px]">
       <div className="flex flex-col md:flex-row md:min-h-screen">
 
-        <div className="relative w-1/2 hidden md:block min-h-[300px] md:min-h-screen">
+        <div className="relative md:w-1/2 min-h-[300px] md:min-h-screen">
           <Image
             src={downloadImage.imageUrl}
             alt={downloadImage.description}

@@ -7,6 +7,15 @@ export default function GMapsSection() {
   return (
     <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
         <div className="flex flex-col md:flex-row md:min-h-screen">
+            <div className="relative md:w-1/2 hidden md:block">
+                <Image
+                    src={"/images/6-min.webp"}
+                    alt={gmapsImage.description}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                />
+            </div>
             <div className="flex flex-col justify-center p-8 text-center md:w-1/2">
                 <h2 className="mb-4 font-headline text-3xl font-bold">Our Distribution Network</h2>
                 <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">
@@ -14,15 +23,7 @@ export default function GMapsSection() {
                 </p>
                 <GoogleMaps />
             </div>
-            <div className="relative md:w-1/2 hidden md:block">
-                <Image
-                    src={gmapsImage.imageUrl}
-                    alt={gmapsImage.description}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={gmapsImage.imageHint}
-                />
-            </div>
+            
         </div>
     </section>
   );

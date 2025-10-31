@@ -15,9 +15,9 @@ const navLinks = [
   // { href: '/archive', label: 'Archive' },
   // { href: '/favorites', label: 'Favorites' },
   { href: '/about', label: 'About Us' },
-  { href: '/download-article', label: 'Download' },
+  // { href: '/download-article', label: 'Download' },
   // { href: '/admin/image-suggester', label: 'Image Suggester' },
-  { href: '/admin/upload-article', label: 'Upload Article' },
+  // { href: '/admin/upload-article', label: 'Upload Article' },
 ];
 
 export function Header() {
