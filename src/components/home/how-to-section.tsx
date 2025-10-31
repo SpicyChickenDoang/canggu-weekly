@@ -10,6 +10,14 @@ export function HowToSection() {
     return (
         <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
             <div className="flex flex-col md:flex-row">
+                <div className="relative min-h-[200px] md:hidden  ">
+                    <Image
+                        src={howToImage.imageUrl}
+                        alt={howToImage.description}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 <div className="flex flex-col justify-center p-8 text-center md:p-12 md:text-left md:w-1/2">
                     <h2 className="font-headline text-3xl font-bold">
                         How To:

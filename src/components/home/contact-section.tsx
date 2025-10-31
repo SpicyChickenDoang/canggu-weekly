@@ -60,6 +60,15 @@ export function ContactSection() {
   return (
     <section id="contact" className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
       <div className="flex flex-col md:flex-row">
+        <div className="relative md:w-1/2 md:hidden min-h-[300px]">
+          <Image
+            src={"/images/img-6.webp"}
+            alt={contactImage.description}
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+        </div>
         <div className="mx-auto max-w-lg p-8 md:w-1/2">
           <div className="mb-6 text-center">
             <h2 className="font-headline text-3xl font-bold">
