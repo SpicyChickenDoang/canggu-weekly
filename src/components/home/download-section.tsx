@@ -20,18 +20,18 @@ export function DownloadSection() {
   const [selectedFile, setSelectedFile] = useState<string>('');
   const downloadImage = PlaceHolderImages.find(p => p.id === 'download-image') ?? PlaceHolderImages[0];
 
-  useEffect(() => {
-    async function fetchFiles() {
-      const files = await getPdfFiles();
-      console.log(files);
+  // useEffect(() => {
+  //   async function fetchFiles() {
+  //     const files = await getPdfFiles();
+  //     console.log(files);
 
-      setPdfFiles(files);
-      if (files.length > 0) {
-        setSelectedFile(files[0]);
-      }
-    }
-    fetchFiles();
-  }, []);
+  //     setPdfFiles(files);
+  //     if (files.length > 0) {
+  //       setSelectedFile(files[0]);
+  //     }
+  //   }
+  //   fetchFiles();
+  // }, []);
 
   const handleDownload = () => {
     if (selectedFile) {

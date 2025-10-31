@@ -56,7 +56,6 @@ export function ContactSection() {
   return (
     <section id="contact">
         <div className="mx-auto max-w-lg my-10 p-8">
-            <div>
                 <div className="mb-6 text-center">
                     <h2 className="font-headline text-3xl font-bold">Contact Us</h2>
                     <p className="text-muted-foreground">Have a question or a story tip? Drop us a line!</p>
@@ -136,7 +135,6 @@ export function ContactSection() {
                     )}
                 </div>
             </div>
-        </div>
     </section>
   );
 }

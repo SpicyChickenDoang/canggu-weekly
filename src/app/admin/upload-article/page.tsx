@@ -25,6 +25,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Loader2, Upload, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import Link from 'next/link';
 
 const formSchema = z.object({
   pdfFile: z
@@ -34,14 +35,14 @@ const formSchema = z.object({
       (files) => files?.[0]?.type === 'application/pdf',
       'Only PDF files are allowed.'
     )
-    .refine((files) => files?.[0]?.size <= 5000000, `Max file size is 5MB.`),
+    .refine((files) => files?.[0]?.size <= 8_000_000, `Max file size is 10MB.`),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export default function UploadArticlePage() {
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
+  const [result, setResult] = useState<{ success: boolean; message: string; url?: string; } | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -76,7 +77,7 @@ export default function UploadArticlePage() {
         <CardHeader>
           <CardTitle>Upload PDF</CardTitle>
           <CardDescription>
-            Select a PDF file from your computer to upload. The file name will be used as the article title.
+            Select a PDF file from your computer to upload. Make sure to compress it before uploading, you can use Online tools such as <Link href={"https://www.ilovepdf.com/compress_pdf"} target='_blank' className='font-bold text-red-500'>ilovepdf</Link>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -95,7 +96,7 @@ export default function UploadArticlePage() {
                         {...form.register('pdfFile')}
                       />
                     </FormControl>
-                    <FormDescription>Max file size: 5MB.</FormDescription>
+                    <FormDescription>Max file size: 6MB.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -123,6 +124,7 @@ export default function UploadArticlePage() {
               )}
               <AlertTitle>{result.success ? 'Success' : 'Error'}</AlertTitle>
               <AlertDescription>{result.message}</AlertDescription>
+              <AlertDescription>{result.url}</AlertDescription>
             </Alert>
           )}
         </CardContent>
