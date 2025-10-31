@@ -61,11 +61,11 @@ export function ContactSection() {
       <div className="flex flex-col md:flex-row">
         <div className="relative md:w-1/2 hidden md:block min-h-[550px] md:min-h-auto">
             <Image
-                src={contactImage.imageUrl}
+                src={"/images/img-6.webp"}
                 alt={contactImage.description}
                 fill
                 className="object-cover"
-                data-ai-hint={contactImage.imageHint}
+                loading="lazy"
             />
         </div>
         <div className="mx-auto max-w-lg p-8 md:w-1/2">

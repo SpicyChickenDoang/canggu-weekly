@@ -26,10 +26,11 @@ export function AboutSection() {
                 
                 <div className="relative md:w-1/2 hidden md:block">
                     <Image
-                        src={aboutImage.imageUrl}
+                        src={"/images/img-5.webp"}
                         alt="Canggu cafe"
                         fill
                         className="object-cover"
+                        loading='lazy'
                     />
                 </div>
             </div>

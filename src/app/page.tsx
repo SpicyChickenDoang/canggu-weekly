@@ -6,6 +6,7 @@ import { HowToSection } from '@/components/home/how-to-section';
 import { StatsSection } from '@/components/home/StatsSection';
 import { ContactSection } from '@/components/home/contact-section';
 import { ClientsSection } from '@/components/home/clients-section';
+import GMapsSection from '@/components/home/GmapsSection';
 
 export default function Home() {
   const currentArticles = getArticlesByIssue(1);
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <div className='flex flex-col'>
       <Hero />
-      
+
       <AboutSection />
 
       {/* <section>
@@ -35,7 +36,7 @@ export default function Home() {
       </section> */}
 
       <DownloadSection />
-      
+
       <HowToSection />
 
       <StatsSection />
@@ -43,6 +44,8 @@ export default function Home() {
       <ClientsSection />
 
       <ContactSection />
+
+      <GMapsSection />
     </div>
   );
 }

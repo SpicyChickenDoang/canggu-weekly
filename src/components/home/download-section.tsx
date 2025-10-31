@@ -49,6 +49,7 @@ export function DownloadSection() {
             alt={downloadImage.description}
             fill
             className="object-cover"
+            loading='lazy'
           />
         </div>
 

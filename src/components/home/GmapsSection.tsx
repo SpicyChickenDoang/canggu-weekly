@@ -1,6 +1,6 @@
 import GoogleMaps from "../GoogleMaps";
 
-export function StatsSection() {
+export default function GMapsSection() {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 text-center">

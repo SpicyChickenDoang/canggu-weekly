@@ -102,11 +102,11 @@ export function ClientsSection() {
           </div>
            <div className="relative md:w-1/2 hidden md:block">
                 <Image
-                    src={clientsImage.imageUrl}
+                    src={"/images/img-3.webp"}
                     alt={clientsImage.description}
                     fill
                     className="object-cover"
-                    data-ai-hint={clientsImage.imageHint}
+                    loading='lazy'
                 />
             </div>
       </div>

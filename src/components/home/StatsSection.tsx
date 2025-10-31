@@ -9,7 +9,7 @@ export function StatsSection() {
       <div className="flex flex-col md:flex-row md:min-h-screen">
           <div className="relative md:w-1/2 hidden md:block">
               <Image
-                  src={statsImage.imageUrl}
+                  src={"/images/img-1.webp"}
                   alt={statsImage.description}
                   fill
                   className="object-cover"

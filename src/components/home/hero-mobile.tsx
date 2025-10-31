@@ -15,7 +15,6 @@ export default function HeroMobile() {
         alt="Canggu Weekly Cover"
         fill
         className="object-cover"
-        data-ai-hint={heroImage.imageHint}
         priority
       />
       <div className="absolute inset-0 bg-black/40" />
