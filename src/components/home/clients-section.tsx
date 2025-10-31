@@ -10,6 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const clients = [
   { name: 'Hyatt', src: "/icons/hyatt.png", url: "https://www.hyatt.com/hyatt-regency/en-US/dpsbl-hyatt-regency-bali" },
@@ -64,37 +65,50 @@ const ClientLogo = ({ name, src, url }: { name: string; src: string, url: string
 );
 
 export function ClientsSection() {
+    const clientsImage = PlaceHolderImages.find(p => p.id === 'clients-image') ?? PlaceHolderImages[0];
+
   return (
-    <section className="py-10 bg-muted">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="mb-4 font-headline text-3xl font-bold">Our Happy Clients</h2>
-        <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">
-          We are proud to partner with some of the best businesses in Canggu.
-        </p>
+    <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
+      <div className="flex flex-col md:flex-row md:min-h-screen">
+          <div className="flex flex-col justify-center p-8 text-center md:p-12 md:w-1/2">
+            <h2 className="mb-4 font-headline text-3xl font-bold">Our Happy Clients</h2>
+            <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">
+              We are proud to partner with some of the best businesses in Canggu.
+            </p>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
-          {clients.slice(0, 4).map((client) => (
-            <ClientLogo key={client.name} {...client} />
-          ))}
-        </div>
-
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="mt-12">
-              Show All Clients
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-4xl">
-            <DialogHeader>
-              <DialogTitle>Our Happy Clients</DialogTitle>
-            </DialogHeader>
-            <div className="grid max-h-[60vh] grid-cols-2 gap-4 overflow-y-auto p-1 md:grid-cols-3 lg:grid-cols-4">
-              {clients.map((client) => (
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-2">
+              {clients.slice(0, 4).map((client) => (
                 <ClientLogo key={client.name} {...client} />
               ))}
             </div>
-          </DialogContent>
-        </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="mt-12 self-center">
+                  Show All Clients
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl">
+                <DialogHeader>
+                  <DialogTitle>Our Happy Clients</DialogTitle>
+                </DialogHeader>
+                <div className="grid max-h-[60vh] grid-cols-2 gap-4 overflow-y-auto p-1 md:grid-cols-3 lg:grid-cols-4">
+                  {clients.map((client) => (
+                    <ClientLogo key={client.name} {...client} />
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
+           <div className="relative md:w-1/2 hidden md:block">
+                <Image
+                    src={clientsImage.imageUrl}
+                    alt={clientsImage.description}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={clientsImage.imageHint}
+                />
+            </div>
       </div>
     </section>
   );
