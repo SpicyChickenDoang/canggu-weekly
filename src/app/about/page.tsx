@@ -6,7 +6,7 @@ export default function AboutPage() {
   const image = PlaceHolderImages.find(p => p.id === 'cafe-culture') ?? PlaceHolderImages[0];
 
   return (
-    <section className="container my-10 max-w-4xl px-4 py-12 border-[3px] border-yellow-600 border-dashed">
+    <section className="container my-10 max-w-4xl px-4 py-12 border-y-[3px] border-yellow-600 border-dashed">
       <header className="mb-12 text-center">
         <h1 className="font-headline text-5xl font-bold">
           <TextType

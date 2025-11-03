@@ -59,7 +59,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row items-center">
         <div className="relative md:w-1/2 md:hidden min-h-[300px]">
           <Image
             src={"/images/img-6.webp"}
