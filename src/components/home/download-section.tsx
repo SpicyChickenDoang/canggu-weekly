@@ -16,7 +16,7 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from '@/component
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function DownloadSection() {
-  const [pdfFiles, setPdfFiles] = useState<string[]>([]);
+  // const [pdfFiles, setPdfFiles] = useState<string[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
   const downloadImage = PlaceHolderImages.find(p => p.id === 'download-image') ?? PlaceHolderImages[0];
 
@@ -33,9 +33,15 @@ export function DownloadSection() {
   //   fetchFiles();
   // }, []);
 
+  const pdfFiles = [
+    'Canggu-Weekly-347-Online.pdf.pdf',
+    'Canggu-Weekly-362-Online.pdf.pdf',
+    'CW 383 Sep 2025.pdf',
+  ];
+
   const handleDownload = () => {
     if (selectedFile) {
-      window.open(`/article-pdfs/${selectedFile}`, '_blank');
+      window.open(`/articles/${selectedFile}`, '_blank');
     }
   };
 
