@@ -10,31 +10,34 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Download } from 'lucide-react';
-import { getPdfFiles } from '@/lib/pdf';
+
+type FileMetadata = {
+  id: number; // Assuming ID can be string or number
+  filename: string;
+  uploaded_at: string; // Assuming a date string
+};
 
 export default function DownloadArticlePage() {
-  const [pdfFiles, setPdfFiles] = useState<string[]>([]);
+  const [pdfFiles, setPdfFiles] = useState<FileMetadata[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
 
   useEffect(() => {
-    // We are fetching the files on the client side, but the function executes on the server.
-    // This is a simplified approach. In a real app, you might fetch this list via an API route.
-    async function fetchFiles() {
-      const files = await getPdfFiles();
-      setPdfFiles(files);
-      if (files.length > 0) {
-        setSelectedFile(files[0]);
-      }
-    }
-    fetchFiles();
+    fetch('/api/pdfs')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setPdfFiles(data || []);
+      })
+      .catch((err) => console.error('Failed to load PDFs:', err));
   }, []);
 
-  const handleDownload = () => {
-    if (selectedFile) {
-      // The files are in the public directory, so they are directly accessible.
-      window.open(`/article-pdfs/${selectedFile}`, '_blank');
-    }
+  const handleDownload = async () => {
+    if (!selectedFile) return;
+    const url = `/api/pdf/${encodeURIComponent(selectedFile)}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
   };
+
 
   return (
     <div className="container mx-auto max-w-2xl px-4 py-12">
@@ -58,8 +61,8 @@ export default function DownloadArticlePage() {
               <SelectContent>
                 {pdfFiles.length > 0 ? (
                   pdfFiles.map((file) => (
-                    <SelectItem key={file} value={file}>
-                      {file.replace(/-/g, ' ').replace('.pdf', '')}
+                    <SelectItem key={file.id} value={file.filename}>
+                      {file.filename.replace(/-/g, ' ').replace('.pdf', '')}
                     </SelectItem>
                   ))
                 ) : (

@@ -1,10 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { uploadPdfAction } from '@/actions/upload-pdf';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -13,120 +9,115 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
 import { Loader2, Upload, CheckCircle, AlertTriangle } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
 
-const formSchema = z.object({
-  pdfFile: z
-    .any()
-    .refine((files) => files?.length == 1, 'PDF file is required.')
-    .refine(
-      (files) => files?.[0]?.type === 'application/pdf',
-      'Only PDF files are allowed.'
-    )
-    .refine((files) => files?.[0]?.size <= 8_000_000, `Max file size is 10MB.`),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 export default function UploadArticlePage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<{ success: boolean; message: string; url?: string; } | null>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-  });
+  const { toast } = useToast();
 
-  async function onSubmit(values: FormValues) {
-    setIsLoading(true);
-    setResult(null);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFile(e.target.files?.[0] || null);
+  };
 
+  async function handleUpload(e: React.FormEvent) {
+    e.preventDefault();
+    if (!file) {
+      setMessage("Please select a PDF file.");
+      return;
+    }
+
+    setUploading(true);
+    setMessage("");
     const formData = new FormData();
-    formData.append('pdfFile', values.pdfFile[0]);
+    formData.append("pdf", file);
 
-    const response = await uploadPdfAction(formData);
-    setResult(response);
-    setIsLoading(false);
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/articles/new`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`,
+        },
+        body: formData,
 
-    if (response.success) {
-      form.reset();
+      });
+      const data = await res.json();
+      console.log(data);
+
+      if (!res.ok) {
+        toast({
+          title: "Upload Failed!",
+          description: data.message,
+          variant: "destructive",
+          duration: 3000,
+        })
+      } else {
+        toast({
+          title: file.name,
+          description: "Successfully Uploaded!",
+          variant: "default",
+          duration: 3000,
+        })
+      }
+
+
+    } catch (err: any) {
+
+      console.log("error: ", err);
+
+      toast({
+        title: "Upload Failed!",
+        description: err.message,
+        variant: "destructive",
+        duration: 3000,
+      })
+
+    } finally {
+      setUploading(false);
     }
   }
 
   return (
     <div className="container mx-auto max-w-2xl px-4 py-12">
       <header className="mb-8 text-center">
-        <h1 className="font-headline text-5xl font-bold">Upload Article PDF</h1>
+        <h1 className="font-headline text-5xl font-bold">Upload Magazine</h1>
         <p className="mt-2 text-lg text-muted-foreground">
-          Add a new PDF article to the download list.
+          Add a new magazine to the download list. Max PDF Size 8 MB.
         </p>
       </header>
 
       <Card>
         <CardHeader>
-          <CardTitle>Upload PDF</CardTitle>
+          <CardTitle>Upload</CardTitle>
           <CardDescription>
             Select a PDF file from your computer to upload. Make sure to compress it before uploading, you can use Online tools such as <Link href={"https://www.ilovepdf.com/compress_pdf"} target='_blank' className='font-bold text-red-500'>ilovepdf</Link>
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="pdfFile"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>PDF Article</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="file"
-                        accept="application/pdf"
-                        {...form.register('pdfFile')}
-                      />
-                    </FormControl>
-                    <FormDescription>Max file size: 6MB.</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" disabled={isLoading} className="w-full">
-                {isLoading ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                ) : (
-                  <Upload className="mr-2 h-4 w-4" />
-                )}
-                Upload Article
-              </Button>
-            </form>
-          </Form>
 
-          {result && (
-            <Alert
-              variant={result.success ? 'default' : 'destructive'}
-              className="mt-6"
+          <div className="max-w-md mx-auto p-6">
+            <input
+              type="file"
+              accept="application/pdf"
+              onChange={handleFileChange}
+              className="mb-4"
+            />
+            <Button
+              onClick={handleUpload}
+              disabled={!file || uploading}
+              className="w-full flex items-center justify-center"
             >
-              {result.success ? (
-                <CheckCircle className="h-4 w-4" />
-              ) : (
-                <AlertTriangle className="h-4 w-4" />
-              )}
-              <AlertTitle>{result.success ? 'Success' : 'Error'}</AlertTitle>
-              <AlertDescription>{result.message}</AlertDescription>
-              <AlertDescription>{result.url}</AlertDescription>
-            </Alert>
-          )}
+              <Upload className="mr-2 h-4 w-4" />
+              {uploading ? "Uploading..." : "Upload PDF"}
+            </Button>
+
+            {message && <p className="mt-4 text-sm text-gray-600">{message}</p>}
+          </div>
         </CardContent>
       </Card>
     </div>

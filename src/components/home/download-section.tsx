@@ -34,15 +34,19 @@ export function DownloadSection() {
   // }, []);
 
   const pdfFiles = [
-    'Canggu-Weekly-347-Online.pdf.pdf',
-    'Canggu-Weekly-362-Online.pdf.pdf',
     'CW 383 Sep 2025.pdf',
+    'Canggu-Weekly-362-Online.pdf',
+    'Canggu-Weekly-347-Online.pdf',
   ];
 
   const handleDownload = () => {
     if (selectedFile) {
       window.open(`/articles/${selectedFile}`, '_blank');
     }
+  };
+
+  const handleDownloadLatest = () => {
+      window.open(`/articles/${pdfFiles[0]}`, '_blank');
   };
 
   return (
@@ -86,6 +90,11 @@ export function DownloadSection() {
             <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
               <Download className="mr-2 h-4 w-4" />
               Download PDF
+            </Button>
+
+            <Button onClick={handleDownloadLatest} className="w-full">
+              <Download className="mr-2 h-4 w-4" />
+              Download Latest Issue
             </Button>
           </div>
         </div>

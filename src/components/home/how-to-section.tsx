@@ -12,7 +12,7 @@ export function HowToSection() {
             <div className="flex flex-col md:flex-row">
                 <div className="relative min-h-[200px] md:hidden  ">
                     <Image
-                        src={howToImage.imageUrl}
+                        src={"/images/women-reading.webp"}
                         alt={howToImage.description}
                         fill
                         className="object-cover"
@@ -43,7 +43,7 @@ export function HowToSection() {
                 </div>
                 <div className="relative min-h-screen hidden md:block md:w-1/2  ">
                     <Image
-                        src={howToImage.imageUrl}
+                        src={"/images/women-reading.webp"}
                         alt={howToImage.description}
                         fill
                         className="object-cover"
