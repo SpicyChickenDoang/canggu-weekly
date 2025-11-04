@@ -12,9 +12,9 @@ import {
 import { Download } from 'lucide-react';
 
 type FileMetadata = {
-  id: number; // Assuming ID can be string or number
+  id: number;
   filename: string;
-  uploaded_at: string; // Assuming a date string
+  uploaded_at: string;
 };
 
 export default function DownloadArticlePage() {

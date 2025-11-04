@@ -11,42 +11,37 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Download } from 'lucide-react';
-import { getPdfFiles } from '@/lib/pdf';
+// import { getPdfFiles } from '@/lib/pdf';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
+type FileMetadata = {
+  id: number;
+  filename: string;
+  uploaded_at: string;
+};
+
 export function DownloadSection() {
-  // const [pdfFiles, setPdfFiles] = useState<string[]>([]);
+  const [pdfFiles, setPdfFiles] = useState<FileMetadata[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
+
   const downloadImage = PlaceHolderImages.find(p => p.id === 'download-image') ?? PlaceHolderImages[0];
 
-  // useEffect(() => {
-  //   async function fetchFiles() {
-  //     const files = await getPdfFiles();
-  //     console.log(files);
+  useEffect(() => {
+    fetch('/api/pdfs')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setPdfFiles(data || []);
+      })
+      .catch((err) => console.error('Failed to load PDFs:', err));
+  }, []);
 
-  //     setPdfFiles(files);
-  //     if (files.length > 0) {
-  //       setSelectedFile(files[0]);
-  //     }
-  //   }
-  //   fetchFiles();
-  // }, []);
+  const handleDownload = async () => {
+    if (!selectedFile) return;
+    const url = `/api/pdf/${encodeURIComponent(selectedFile)}`;
 
-  const pdfFiles = [
-    'CW 383 Sep 2025.pdf',
-    'Canggu-Weekly-362-Online.pdf',
-    'Canggu-Weekly-347-Online.pdf',
-  ];
-
-  const handleDownload = () => {
-    if (selectedFile) {
-      window.open(`/articles/${selectedFile}`, '_blank');
-    }
-  };
-
-  const handleDownloadLatest = () => {
-      window.open(`/articles/${pdfFiles[0]}`, '_blank');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -76,8 +71,8 @@ export function DownloadSection() {
               <SelectContent>
                 {pdfFiles.length > 0 ? (
                   pdfFiles.map((file) => (
-                    <SelectItem key={file} value={file}>
-                      {file.replace(/-/g, ' ').replace('.pdf', '')}
+                    <SelectItem key={file.id} value={file.filename}>
+                      {file.filename.replace(/-/g, ' ').replace('.pdf', '')}
                     </SelectItem>
                   ))
                 ) : (
@@ -92,10 +87,13 @@ export function DownloadSection() {
               Download PDF
             </Button>
 
-            <Button onClick={handleDownloadLatest} className="w-full">
-              <Download className="mr-2 h-4 w-4" />
-              Download Latest Issue
-            </Button>
+            {/* {pdfFiles && pdfFiles.length > 0 &&
+              <Button onClick={handleDownloadLatest} className="w-full">
+                <Download className="mr-2 h-4 w-4" />
+                Download Latest Issue
+              </Button>
+            } */}
+
           </div>
         </div>
       </div>
