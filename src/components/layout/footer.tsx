@@ -5,7 +5,7 @@ import { Instagram, Facebook } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="border-t bg-card text-muted-foreground">
-      <div className="container py-12">
+      <div className="container py-8">
         <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-4 md:text-left">
           {/* Column 1: Logo and Address */}
           <div className="flex flex-col items-center md:items-start">

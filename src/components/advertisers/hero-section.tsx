@@ -32,7 +32,7 @@ export function HeroSection() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/canggu-media-kit.pdf" target="_blank">
+            <Link href="/docs/pricing.pdf" target="_blank">
               <Briefcase className="mr-2 h-5 w-5" />
               Get the Media Kit
             </Link>
