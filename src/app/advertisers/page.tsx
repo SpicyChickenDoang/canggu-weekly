@@ -1,35 +1,78 @@
+
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, MapPin, Newspaper, Target } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Users, MapPin, Newspaper, Target, TrendingUp, BarChart, CheckCircle } from 'lucide-react';
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from '@/components/ui/chart';
+import { Bar, BarChart as RechartsBarChart, XAxis, YAxis, CartesianGrid } from 'recharts';
 
-const stats = [
-  {
-    icon: <Users className="h-10 w-10 text-primary" />,
-    value: '15,000+',
-    label: 'Weekly Readers',
-    description: 'A dedicated audience of locals, expats, and tourists actively seeking the best of Bali.',
-  },
-  {
-    icon: <MapPin className="h-10 w-10 text-primary" />,
-    value: '250+',
-    label: 'Distribution Points',
-    description: 'Strategically placed in the most popular cafes, hotels, and hotspots across Canggu and beyond.',
-  },
-  {
-    icon: <Newspaper className="h-10 w-10 text-primary" />,
-    value: '729',
-    label: 'Editions Published',
-    description: 'A long-standing, trusted voice in the community with a proven track record of engagement.',
-  },
-    {
-    icon: <Target className="h-10 w-10 text-primary" />,
-    label: 'Hyper-Local Focus',
-    value: 'Direct Access',
-    description: 'Connect directly with the vibrant heart of the Canggu community through a beloved local publication.',
-  },
+const chartData = [
+  { category: 'Foodies', desktop: 186, mobile: 80 },
+  { category: 'Surfers', desktop: 305, mobile: 200 },
+  { category: 'Yogis', desktop: 237, mobile: 120 },
+  { category: 'Expats', desktop: 73, mobile: 190 },
+  { category: 'Tourists', desktop: 209, mobile: 130 },
 ];
+
+const chartConfig = {
+  desktop: {
+    label: 'Digital',
+    color: 'hsl(var(--chart-1))',
+  },
+  mobile: {
+    label: 'Print',
+    color: 'hsl(var(--chart-2))',
+  },
+};
+
+const advertisingOptions = [
+    {
+        title: "Digital Feature",
+        description: "A dedicated article on our website and social media, showcasing your business with professional photos and storytelling.",
+        features: ["Full-length article", "Social media blast", "Included in weekly newsletter", "Performance analytics"],
+        price: "Contact for Pricing",
+        icon: <Newspaper className="h-8 w-8 mb-4 text-primary" />
+    },
+    {
+        title: "Print Advertisement",
+        description: "Feature your brand in our widely distributed weekly print magazine, reaching thousands of readers across Canggu.",
+        features: ["Full-page, half-page, or quarter-page", "Prime placement options", "High-quality print", "250+ distribution points"],
+        price: "Starting from $150",
+        icon: <Users className="h-8 w-8 mb-4 text-primary" />
+    },
+    {
+        title: "Event Promotion",
+        description: "Promote your event to our engaged audience through our digital and print channels for maximum visibility.",
+        features: ["Featured on our events calendar", "Social media promotion", "Mention in print edition", "Targeted reach"],
+        price: "Custom Packages",
+        icon: <Target className="h-8 w-8 mb-4 text-primary" />
+    }
+];
+
+const testimonials = [
+    {
+        quote: "Advertising with Canggu Weekly was a game-changer for our cafe. We saw a 30% increase in foot traffic the week our feature was published!",
+        name: "Jayaarta",
+        business: "Owner, The Shady Shack"
+    },
+    {
+        quote: "The team was professional, and the data they provided helped us understand our customers better. Highly recommended for any local business.",
+        name: "Made",
+        business: "Manager, Echo Beach Club"
+    },
+    {
+        quote: "We sold out our yoga retreat thanks to their event promotion package. The reach and engagement were beyond our expectations.",
+        name: "Sophie",
+        business: "Founder, Zen Garden Yoga"
+    }
+]
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -43,11 +86,12 @@ const TelegramIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
+
 export default function AdvertisersPage() {
   return (
-    <div>
+    <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[300px] w-full">
+      <section className="relative h-[60vh] min-h-[400px] w-full">
         <Image
           src="/images/img-7.webp"
           alt="Business meeting in a tropical location"
@@ -56,49 +100,119 @@ export default function AdvertisersPage() {
           priority
           data-ai-hint="business meeting"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="font-headline text-4xl font-bold md:text-6xl">
-            Advertise with Canggu Weekly
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
+          <h1 className="font-headline text-4xl font-bold md:text-6xl max-w-4xl">
+            Connect Your Brand with the Heart of Canggu
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Connect your brand with the pulse of Bali's most vibrant community.
+            A digital platform to reach Canggu's vibrant community through data-driven advertising in our print and digital editions.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto max-w-5xl px-4 py-12 md:py-24">
-        <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold">Why Partner With Us?</h2>
-            <p className="mt-2 text-lg text-muted-foreground">
-                Place your brand in front of a loyal and engaged local audience.
-            </p>
-        </div>
+      <div className="container mx-auto max-w-6xl px-4 py-16 md:py-24 space-y-24">
+        
+        {/* Data-Driven Insights Section */}
+        <section>
+          <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl font-bold">Data-Driven Insights</h2>
+              <p className="mt-2 text-lg text-muted-foreground">
+                  Understand our audience to maximize your campaign's impact.
+              </p>
+          </div>
+          <Card className="shadow-lg">
+            <CardHeader>
+                <CardTitle>Audience Reach: Digital vs. Print</CardTitle>
+                <CardDescription>Engagement across key local demographics.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <ChartContainer config={chartConfig} className="h-[250px] w-full">
+                    <RechartsBarChart accessibilityLayer data={chartData}>
+                        <CartesianGrid vertical={false} />
+                        <XAxis
+                            dataKey="category"
+                            tickLine={false}
+                            tickMargin={10}
+                            axisLine={false}
+                            tickFormatter={(value) => value.slice(0, 3)}
+                        />
+                        <YAxis />
+                        <ChartTooltip
+                            cursor={false}
+                            content={<ChartTooltipContent indicator="dot" />}
+                        />
+                        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+                        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                    </RechartsBarChart>
+                </ChartContainer>
+            </CardContent>
+          </Card>
+        </section>
 
-        {/* Stats Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <Card key={stat.label} className="text-center">
-              <CardHeader>
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                    {stat.icon}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-3xl font-bold">{stat.value}</p>
-                <p className="mt-1 text-lg font-semibold">{stat.label}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{stat.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {/* Advertising Options Section */}
+        <section>
+          <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl font-bold">Our Advertising Solutions</h2>
+              <p className="mt-2 text-lg text-muted-foreground">
+                  Simple and effective ways to advertise in our print and digital editions.
+              </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {advertisingOptions.map((option) => (
+                <Card key={option.title} className="flex flex-col">
+                    <CardHeader className="items-center text-center">
+                        {option.icon}
+                        <CardTitle>{option.title}</CardTitle>
+                        <CardDescription>{option.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                            {option.features.map(feature => (
+                                <li key={feature} className="flex items-center">
+                                    <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                                    {feature}
+                                </li>
+                            ))}
+                        </ul>
+                    </CardContent>
+                    <div className="p-6 pt-0">
+                        <Button className="w-full" disabled>{option.price}</Button>
+                    </div>
+                </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section>
+            <div className="text-center mb-12">
+                <h2 className="font-headline text-3xl font-bold">Success Stories</h2>
+                <p className="mt-2 text-lg text-muted-foreground">
+                    Hear from businesses that have grown with us.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {testimonials.map(t => (
+                    <Card key={t.name} className="bg-card">
+                        <CardContent className="pt-6">
+                            <p className="italic text-muted-foreground">"{t.quote}"</p>
+                            <div className="mt-4 text-right">
+                                <p className="font-semibold">{t.name}</p>
+                                <p className="text-sm text-muted-foreground">{t.business}</p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </section>
 
         {/* Call to Action */}
-        <div className="mt-24 rounded-lg bg-card p-10 text-center shadow-lg">
+        <section className="rounded-lg bg-card p-10 text-center shadow-lg">
             <h3 className="font-headline text-3xl font-bold">Ready to Grow Your Business?</h3>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                Our team is ready to help you create the perfect advertising campaign to meet your goals. Get in touch today to receive our media kit and discuss your options.
+                Our team is ready to help you create the perfect advertising campaign. Get in touch today to receive our media kit and discuss your options.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#25D366]/90 text-white">
@@ -114,7 +228,7 @@ export default function AdvertisersPage() {
                 </Link>
               </Button>
             </div>
-        </div>
+        </section>
       </div>
     </div>
   );
