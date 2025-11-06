@@ -46,7 +46,7 @@ const clients = [
 ];
 
 const ClientLogo = ({ name, src, url }: { name: string; src: string, url: string }) => (
-  <div className="flex h-24 w-full items-center justify-center rounded-lg border bg-card p-4 transition-colors hover:bg-muted">
+  <div className="flex h-24 w-full items-center justify-center rounded-lg border bg-white p-4 transition-colors hover:bg-muted">
     <Link href={url} target="_blank" rel="noopener noreferrer">
       <div className="text-center">
         <div className="text-3xl">
@@ -70,17 +70,10 @@ export function ClientsSection() {
 
   return (
     <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
-      <div className="flex flex-col md:flex-row md:min-h-screen">
+      <div className="flex flex-col md:flex-row md:min-h-[600px]">
         <div className="flex flex-col justify-center p-8 text-center md:p-12 md:w-1/2">
           <h2 className="mb-4 font-headline text-3xl font-bold">
-            <TextType
-              text={["Our Happy Clients", "Partners We Cherish", "Growing with Our Clients"]}
-              typingSpeed={50}
-              pauseDuration={1500}
-              showCursor={true}
-              startOnVisible={true}
-              cursorCharacter="_"
-            />
+            Partners We Cherish
           </h2>
           <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">
             We are proud to partner with some of the best businesses in Canggu.

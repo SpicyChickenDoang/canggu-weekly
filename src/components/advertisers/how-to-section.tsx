@@ -10,7 +10,7 @@ export function HowToSection() {
     return (
         <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
             <div className="flex flex-col md:flex-row">
-                <div className="relative min-h-[200px] md:hidden  ">
+                <div className="relative min-h-[200px] md:hidden">
                     <Image
                         src={"/images/women-reading.webp"}
                         alt={howToImage.description}
@@ -23,14 +23,7 @@ export function HowToSection() {
                         How To:
                     </h2>
                     <h3 className="mb-4 font-headline text-2xl font-bold">
-                        <TextType
-                            text={["Get Your Advertising in The Canggu Weekly", "Connect with the Canggu Audience", "Advertise & Grow with Canggu Weekly"]}
-                            typingSpeed={50}
-                            pauseDuration={1500}
-                            showCursor={true}
-                            startOnVisible={true}
-                            cursorCharacter="?"
-                        />
+                        Advertise & Grow with Canggu Weekly
                     </h3>
                     <p className="mx-auto max-w-2xl text-muted-foreground md:mx-0 text-justify">
                         Interested in reaching a dedicated audience of locals and tourists in the Canggu area? We offer a range of advertising options to suit your needs. From featured articles to banner ads, <span className='text-amber-500 font-bold'>we can help you connect with our readers</span>. For more information on our advertising packages and to discuss how we can work together, please get in touch with our sales team.
