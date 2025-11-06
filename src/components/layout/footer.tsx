@@ -1,11 +1,12 @@
 import { Logo } from '../logo';
 import Link from 'next/link';
+import { Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="border-t bg-card text-muted-foreground">
       <div className="container py-12">
-        <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
+        <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-4 md:text-left">
           {/* Column 1: Logo and Address */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
@@ -29,7 +30,20 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Column 3: Legal Info */}
+          {/* Column 3: Follow Us */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="font-headline font-semibold text-foreground">Follow Us</h3>
+            <div className="mt-2 flex gap-4">
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
+              </Link>
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Column 4: Legal Info */}
           <div className="flex flex-col items-center text-xs md:items-start">
             <h3 className="font-headline font-semibold text-foreground">Company Details</h3>
             <div className="mt-2 space-y-1">
