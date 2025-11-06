@@ -17,6 +17,14 @@ export function Footer() {
               Sanur 80228, Denpasar Selatan, <br />
               Bali, Indonesia
             </p>
+            <div className="mt-4 flex gap-4">
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
+              </Link>
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" />
+              </Link>
+            </div>
           </div>
 
           {/* Column 2: Direct Contact */}
@@ -30,21 +38,8 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Column 3: Follow Us */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-headline font-semibold text-foreground">Follow Us</h3>
-            <div className="mt-2 flex gap-4">
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary" />
-              </Link>
-              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook className="h-6 w-6 text-muted-foreground hover:text-primary" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Column 4: Legal Info */}
-          <div className="flex flex-col items-center text-xs md:items-start">
+          {/* Column 3: Legal Info */}
+          <div className="flex flex-col items-center text-xs md:items-start md:col-span-2">
             <h3 className="font-headline font-semibold text-foreground">Company Details</h3>
             <div className="mt-2 space-y-1">
               <p>SIUP: NO.170/24/2143/DS/BPPTSP&PM/2016</p>
