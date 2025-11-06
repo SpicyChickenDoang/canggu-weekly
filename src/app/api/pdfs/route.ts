@@ -1,8 +1,8 @@
 // src/app/api/pdfs/route.js
 
 export async function GET() {
-  const backendURL = process.env.BE_URL || 'https://bc3b7fca0b25.ngrok-free.app';
-  const accessToken = process.env.ACCESS_TOKEN; // store securely in .env.local
+  const backendURL = process.env.BE_URL;
+  const accessToken = process.env.ACCESS_TOKEN;
 
   try {
     const res = await fetch(`${backendURL}/api/articles`, {

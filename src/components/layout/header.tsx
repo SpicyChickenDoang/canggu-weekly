@@ -14,7 +14,7 @@ const navLinks = [
   // { href: '/', label: 'Current Issue' },
   // { href: '/archive', label: 'Archive' },
   // { href: '/favorites', label: 'Favorites' },
-  { href: '/about', label: 'About Us' },
+  // { href: '/about', label: 'About Us' },
   { href: '/advertisers', label: 'Advertise' },
   { href: '/download-article', label: 'Download' },
   // { href: '/admin/image-suggester', label: 'Image Suggester' },

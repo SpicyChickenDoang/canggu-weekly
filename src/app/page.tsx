@@ -2,10 +2,7 @@ import { getArticlesByIssue } from '@/lib/data';
 import { Hero } from '@/components/home/hero';
 import { AboutSection } from '@/components/home/about-section';
 import { DownloadSection } from '@/components/home/download-section';
-import { HowToSection } from '@/components/home/how-to-section';
-import { StatsSection } from '@/components/home/StatsSection';
 import { ContactSection } from '@/components/home/contact-section';
-import { ClientsSection } from '@/components/home/clients-section';
 import GMapsSection from '@/components/home/GmapsSection';
 
 export default function Home() {
@@ -27,12 +24,6 @@ export default function Home() {
       <AboutSection />
 
       <DownloadSection />
-
-      <HowToSection />
-
-      <StatsSection />
-
-      <ClientsSection />
 
       <GMapsSection />
 

@@ -7,7 +7,7 @@ import { Mail, Briefcase } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative h-[60vh] min-h-[500px] w-full border-black mx-5 my-[10px] border-dashed border-[3px] overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden flex justify-center items-center mb-8">
       <Image
         src="/images/img-7.webp"
         alt="Business meeting in a tropical location"
