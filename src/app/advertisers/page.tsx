@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, MapPin, Newspaper, Target, TrendingUp, BarChart, CheckCircle } from 'lucide-react';
+import { Users, MapPin, Newspaper, Target, TrendingUp, BarChart, CheckCircle, Mail, Briefcase } from 'lucide-react';
 import {
   ChartContainer,
   ChartTooltip,
@@ -91,7 +91,7 @@ export default function AdvertisersPage() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] w-full">
+      <section className="relative h-[60vh] min-h-[500px] w-full">
         <Image
           src="/images/img-7.webp"
           alt="Business meeting in a tropical location"
@@ -103,11 +103,25 @@ export default function AdvertisersPage() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="font-headline text-4xl font-bold md:text-6xl max-w-4xl">
-            Connect Your Brand with the Heart of Canggu
+            Reach Canggu’s Most Engaged Locals and Visitors.
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            A digital platform to reach Canggu's vibrant community through data-driven advertising in our print and digital editions.
+            Join hundreds of businesses growing through our print and digital magazine — seen by 10,000+ readers every month.
           </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg">
+                <Link href="#contact">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Get Advertising Info
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/canggu-media-kit.pdf" target="_blank">
+                    <Briefcase className="mr-2 h-5 w-5" />
+                    View Our Media Kit
+                </Link>
+              </Button>
+          </div>
         </div>
       </section>
 
@@ -209,7 +223,7 @@ export default function AdvertisersPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="rounded-lg bg-card p-10 text-center shadow-lg">
+        <section id="contact" className="rounded-lg bg-card p-10 text-center shadow-lg">
             <h3 className="font-headline text-3xl font-bold">Ready to Grow Your Business?</h3>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Our team is ready to help you create the perfect advertising campaign. Get in touch today to receive our media kit and discuss your options.
@@ -233,3 +247,5 @@ export default function AdvertisersPage() {
     </div>
   );
 }
+
+    
