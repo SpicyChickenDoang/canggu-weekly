@@ -6,7 +6,7 @@ export default function GMapsSection() {
     const gmapsImage = PlaceHolderImages.find(p => p.id === 'gmaps-image') ?? PlaceHolderImages[0];
   return (
     <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
-        <div className="flex flex-col md:flex-row md:min-h-screen">
+        <div className="flex flex-col md:flex-row md:min-h-[600px]">
             <div className="relative md:w-1/2 hidden md:block">
                 <Image
                     src={"/images/6-min.webp"}

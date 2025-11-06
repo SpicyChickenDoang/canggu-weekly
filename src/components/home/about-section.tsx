@@ -9,7 +9,7 @@ export function AboutSection() {
 
     return (
         <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
-            <div className="flex flex-col md:flex-row md:min-h-screen">
+            <div className="flex flex-col md:flex-row md:min-h-[600px]">
                 <div className="flex flex-col justify-center p-8 md:p-12 md:w-1/2">
                     <h2 className="mb-4 font-headline text-3xl font-bold">
                         <TextType

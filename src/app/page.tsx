@@ -21,9 +21,9 @@ export default function Home() {
     <div className='flex flex-col'>
       <Hero />
 
-      <AboutSection />
-
       <DownloadSection />
+
+      <AboutSection />
 
       <GMapsSection />
 
