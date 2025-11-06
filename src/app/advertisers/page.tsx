@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -117,7 +118,7 @@ export default function AdvertisersPage() {
               <Button asChild size="lg" variant="secondary">
                 <Link href="/canggu-media-kit.pdf" target="_blank">
                     <Briefcase className="mr-2 h-5 w-5" />
-                    View Our Media Kit
+                    Get the Media Kit
                 </Link>
               </Button>
           </div>
@@ -282,5 +283,7 @@ export default function AdvertisersPage() {
     </div>
   );
 }
+
+    
 
     
