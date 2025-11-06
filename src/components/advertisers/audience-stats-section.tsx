@@ -4,7 +4,7 @@ import { Eye, Globe, Newspaper, MapPin } from 'lucide-react';
 
 export function AudienceStatsSection() {
     return (
-        <section className="bg-muted">
+        <section className="bg-muted border-black mx-5 my-[10px] border-dashed border-[3px]">
             <div className="container mx-auto max-w-6xl px-4 py-16 md:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="md:pr-12">

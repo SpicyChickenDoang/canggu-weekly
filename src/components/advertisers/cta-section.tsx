@@ -17,7 +17,7 @@ const TelegramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function CtaSection() {
     return (
-        <section id="contact" className="rounded-lg bg-card p-10 text-center shadow-lg">
+        <section id="contact" className="rounded-lg bg-card p-10 text-center shadow-lg border-black mx-5 my-[10px] border-dashed border-[3px]">
             <h3 className="font-headline text-3xl font-bold">Ready to Grow Your Business?</h3>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
                 Our team is ready to help you create the perfect advertising campaign. Get in touch today to receive our media kit and discuss your options.

@@ -22,25 +22,27 @@ const testimonials = [
 
 export function TestimonialsSection() {
     return (
-        <section>
-            <div className="text-center mb-12">
-                <h2 className="font-headline text-3xl font-bold">Success Stories</h2>
-                <p className="mt-2 text-lg text-muted-foreground">
-                    Hear from businesses that have grown with us.
-                </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {testimonials.map(t => (
-                    <Card key={t.name} className="bg-card">
-                        <CardContent className="pt-6">
-                            <p className="italic text-muted-foreground">"{t.quote}"</p>
-                            <div className="mt-4 text-right">
-                                <p className="font-semibold">{t.name}</p>
-                                <p className="text-sm text-muted-foreground">{t.business}</p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                ))}
+        <section className="border-black mx-5 my-[10px] border-dashed border-[3px] py-16 md:py-24">
+            <div className="container mx-auto max-w-6xl px-4">
+              <div className="text-center mb-12">
+                  <h2 className="font-headline text-3xl font-bold">Success Stories</h2>
+                  <p className="mt-2 text-lg text-muted-foreground">
+                      Hear from businesses that have grown with us.
+                  </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {testimonials.map(t => (
+                      <Card key={t.name} className="bg-card">
+                          <CardContent className="pt-6">
+                              <p className="italic text-muted-foreground">"{t.quote}"</p>
+                              <div className="mt-4 text-right">
+                                  <p className="font-semibold">{t.name}</p>
+                                  <p className="text-sm text-muted-foreground">{t.business}</p>
+                              </div>
+                          </CardContent>
+                      </Card>
+                  ))}
+              </div>
             </div>
         </section>
     );

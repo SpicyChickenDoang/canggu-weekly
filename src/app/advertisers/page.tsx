@@ -11,13 +11,10 @@ export default function AdvertisersPage() {
     <div className="bg-background">
       <HeroSection />
       <AudienceStatsSection />
-      
-      <div className="container mx-auto max-w-6xl px-4 py-16 md:py-24 space-y-24">
-        <DataInsightsSection />
-        <SolutionsSection />
-        <TestimonialsSection />
-        <CtaSection />
-      </div>
+      <DataInsightsSection />
+      <SolutionsSection />
+      <TestimonialsSection />
+      <CtaSection />
     </div>
   );
 }
