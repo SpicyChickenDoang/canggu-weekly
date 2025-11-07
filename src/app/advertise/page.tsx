@@ -8,6 +8,7 @@ import GMapsSection from '@/components/home/GmapsSection';
 import { ClientsSection } from '@/components/advertisers/clients-section';
 import { HowToSection } from '@/components/advertisers/how-to-section';
 import { MagazinePreviewSection } from '@/components/advertisers/magazine-preview-section';
+import { ContactFormSection } from '@/components/advertisers/contact-form-section';
 
 export default function AdvertisersPage() {
   return (
@@ -21,6 +22,7 @@ export default function AdvertisersPage() {
       {/* <SolutionsSection /> */}
       <GMapsSection />
       <CtaSection />
+      <ContactFormSection />
     </div>
   );
 }
