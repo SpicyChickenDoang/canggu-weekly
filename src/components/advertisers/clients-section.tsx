@@ -19,7 +19,7 @@ const clients = [
   { name: 'Rejuvenique', src: "/icons/rejuvenique.png", url: "https://www.rejuveniqueclinic.com/" },
   { name: 'Rejuvie Clinic', src: "/icons/rejuvieclinic.png", url: "https://rejuvieclinic.com/" },
   { name: 'Vitalika', src: "/icons/vitalika.jpeg", url: "https://www.instagram.com/vitalika.bali/" },
-  { name: 'Il Forno', src: "/icons/il-forno.jpeg", url: "https://www.instagram.com/ilfornobali/" },
+  { name: 'Il Forno', src: "/icons/il-forno.png", url: "https://www.instagram.com/ilfornobali/" },
   { name: 'altfnctrl', src: "/icons/afc-logo.jpg", url: "https://www.altfnctrl.com/" },
   { name: 'All 4 Diving', src: "/icons/all-4-diving.jpg", url: "https://www.all4divingindonesia.com/" },
   { name: 'Bali Bagus', src: "/icons/balibagus.jpg", url: "https://www.facebook.com/pages/Warung-Bali-Bagus/958701447498048" },

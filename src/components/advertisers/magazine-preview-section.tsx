@@ -13,10 +13,19 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const magazineImages = [
-  PlaceHolderImages.find(p => p.id === 'magazine-preview-1'),
-  PlaceHolderImages.find(p => p.id === 'magazine-preview-2'),
-  PlaceHolderImages.find(p => p.id === 'magazine-preview-3'),
-].filter(Boolean);
+  { alt: 'Magazine Preview', src: "/magazine/_1.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_2.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_3.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_4.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_5.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_6.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_7.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_8.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_9.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_10.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_11.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_12.jpg"},
+]
 
 
 export function MagazinePreviewSection() {
@@ -39,17 +48,17 @@ export function MagazinePreviewSection() {
         >
           <CarouselContent>
             {magazineImages.map((image, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="overflow-hidden">
                     <CardContent className="flex aspect-[2/3] items-center justify-center p-0">
                       <Image
-                        src={image!.imageUrl}
-                        alt={image!.description}
+                        src={image!.src}
+                        alt={image!.alt}
                         width={800}
                         height={1200}
                         className="object-cover w-full h-full"
-                        data-ai-hint={image!.imageHint}
+                        loading='lazy'
                       />
                     </CardContent>
                   </Card>
