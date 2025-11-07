@@ -42,13 +42,13 @@ export function MagazinePreviewSection() {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-1">
                   <Card className="overflow-hidden">
-                    <CardContent className="flex aspect-[4/3] items-center justify-center p-0">
+                    <CardContent className="flex aspect-[2/3] items-center justify-center p-0">
                       <Image
                         src={image!.imageUrl}
                         alt={image!.description}
                         width={800}
-                        height={600}
-                        className="object-cover"
+                        height={1200}
+                        className="object-cover w-full h-full"
                         data-ai-hint={image!.imageHint}
                       />
                     </CardContent>
@@ -64,5 +64,3 @@ export function MagazinePreviewSection() {
     </section>
   );
 }
-
-    
