@@ -20,20 +20,23 @@ type FileMetadata = {
 export default function DownloadArticlePage() {
   const [pdfFiles, setPdfFiles] = useState<FileMetadata[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
+  const [latestIssue, setlatestIssue] = useState<FileMetadata | any>('')
 
   useEffect(() => {
     fetch('/api/pdfs')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPdfFiles(data || []);
+        setlatestIssue(data[0])
       })
       .catch((err) => console.error('Failed to load PDFs:', err));
   }, []);
 
-  const handleDownload = async () => {
-    if (!selectedFile) return;
-    const url = `/download/${encodeURIComponent(selectedFile)}`;
+  const handleDownload = async (isLatest: any) => {
+
+    const url = isLatest
+      ? `/download/${encodeURIComponent(latestIssue?.filename)}`
+      : `/download/${encodeURIComponent(selectedFile)}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -73,9 +76,18 @@ export default function DownloadArticlePage() {
               </SelectContent>
             </Select>
           </div>
-          <Button onClick={handleDownload} disabled={!selectedFile} className="w-full">
+          <Button onClick={() => handleDownload(false)} disabled={!selectedFile} className="w-full">
             <Download className="mr-2 h-4 w-4" />
-            Download PDF
+            Download
+          </Button>
+
+          <div className='flex flex-col text-center'>
+            <span>OR</span>
+          </div>
+
+          <Button onClick={() => handleDownload(true)} className="w-full">
+            <Download className="mr-2 h-4 w-4" />
+            Download our latest Issue
           </Button>
         </div>
       </div>

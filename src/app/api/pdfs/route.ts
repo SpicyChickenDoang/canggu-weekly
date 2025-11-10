@@ -6,7 +6,9 @@ export async function GET() {
 
   try {
     const res = await fetch(`${backendURL}/api/articles`, {
-      cache: 'no-store',
+      // next: { 
+      //   revalidate: 3600 * 24,
+      // },
       headers: {
         'Authorization': `Bearer ${accessToken}`,
       },
