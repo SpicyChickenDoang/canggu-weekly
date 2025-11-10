@@ -1,5 +1,6 @@
 import type { Article, Issue } from './types';
 import { PlaceHolderImages } from './placeholder-images';
+// import { cache } from 'react';
 
 const issues: Issue[] = [
   {
@@ -161,4 +162,18 @@ export function searchArticles(query: string): Article[] {
       article.content.toLowerCase().includes(lowercasedQuery) ||
       article.excerpt.toLowerCase().includes(lowercasedQuery)
   );
+}
+
+export async function getArticlesList() {
+    const res = await fetch('/api/pdfs', {
+        next: { 
+            revalidate: 3600 * 24
+        } 
+    });
+
+    if (!res.ok) {
+        throw new Error(`Failed to load PDFs: Server responded with status ${res.status}`);
+    }
+    const data = await res.json();
+    return data || [];
 }

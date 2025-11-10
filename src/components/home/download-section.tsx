@@ -39,7 +39,7 @@ export function DownloadSection() {
 
   const handleDownload = async () => {
     if (!selectedFile) return;
-    const url = `/api/pdf/${encodeURIComponent(selectedFile)}`;
+    const url = `/download/${encodeURIComponent(selectedFile)}`;
 
     window.open(url, "_blank", "noopener,noreferrer");
   };
