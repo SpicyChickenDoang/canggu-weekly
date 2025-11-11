@@ -20,8 +20,8 @@ export function LocationsSection() {
   return (
     <section id="locations" className="border-black mx-5 my-[10px] border-dashed border-[3px] bg-card py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div className="md:sticky md:top-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
             <div className="text-center md:text-left mb-8">
               <h2 className="font-headline text-4xl font-bold">Our Distribution Network</h2>
               <p className="mt-2 text-muted-foreground">
