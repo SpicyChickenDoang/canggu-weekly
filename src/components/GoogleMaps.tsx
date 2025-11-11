@@ -62,7 +62,7 @@ export default function GoogleMaps({ locationId }: GoogleMapsProps) {
   const center = useMemo(() => locationCenters[locationId] || { lat: -8.65, lng: 115.15 }, [locationId]);
 
   return (
-    <div className="px-4 mb-10">
+    <div>
       <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || ""}>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13} key={locationId}>
           {branches.map((branch, i) => (

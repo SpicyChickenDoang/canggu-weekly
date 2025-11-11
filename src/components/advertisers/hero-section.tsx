@@ -26,17 +26,17 @@ export function HeroSection() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
-            <Link href="#contact">
+            <Link href="#contact-buttons">
               <Mail className="mr-2 h-5 w-5" />
               Get Advertising Info
             </Link>
           </Button>
-          <Button asChild size="lg" variant="secondary">
+          {/* <Button asChild size="lg" variant="secondary">
             <Link href="/docs/pricing.pdf" target="_blank">
               <Briefcase className="mr-2 h-5 w-5" />
               Get the Media Kit
             </Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

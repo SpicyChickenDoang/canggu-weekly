@@ -20,11 +20,8 @@ export function LocationsSection() {
   return (
     <section id="locations" className="border-black mx-5 my-[10px] border-dashed border-[3px] bg-card py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-headline text-3xl font-bold">Our Distribution Network</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Find our magazine at these fine locations across the island. Select an area to see our distribution points.
-          </p>
+        <div className="text-center mb-2 md:mb-4">
+          <h2 className="font-headline text-4xl font-bold">Our Distribution Network</h2>
         </div>
 
         <div className="max-w-md mx-auto mb-8">
