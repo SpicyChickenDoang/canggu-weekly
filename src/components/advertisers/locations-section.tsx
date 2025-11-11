@@ -18,8 +18,8 @@ export function LocationsSection() {
   const [selectedLocation, setSelectedLocation] = useState<Location>('A');
 
   return (
-    <section id="locations" className="border-black mx-5 my-[10px] border-dashed border-[3px] bg-card py-16 md:py-24">
-      <div className="container mx-auto max-w-6xl px-4">
+    <section id="locations" className="border-black mx-5 my-[10px] border-dashed border-[3px] bg-card md:py-24">
+      <div className="container max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <div className="text-center md:text-left mb-8">
@@ -44,9 +44,9 @@ export function LocationsSection() {
               </Select>
             </div>
           </div>
-          
+
           <div className="rounded-lg overflow-hidden border shadow-lg min-h-[500px]">
-              <GoogleMaps locationId={selectedLocation} />
+            <GoogleMaps locationId={selectedLocation} />
           </div>
         </div>
       </div>
