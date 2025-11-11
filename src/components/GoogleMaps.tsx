@@ -21,29 +21,13 @@ interface Branch {
 
 const branches: Branch[] = [
   {
-    name: "24/7 Bali Belly Home Doctor & Infusion Therapy. (Seminyak)",
-    lat: -8.7085285,
-    lng: 115.1720993,
-    image: "/images/branch_seminyak.png",
-    viewMap: "https://maps.app.goo.gl/pd6oaCqVY7T6Px5t6",
+    name: "La Boheme Mansion (Pererenan)",
+    lat: -8.6323707,
+    lng: 115.1297222,
+    image: "/images/logo-headline.png",
+    viewMap: "https://maps.app.goo.gl/n8cFLjnH8ok1Z2ACA",
     rating: "4.9",
   },
-  {
-    name: "IV Drip Clinic - Mobile Home Service Bali (24/7) - Bali Belly - Immunity - Hangover. (Jimbaran)",
-    lat: -8.8030159,
-    lng: 115.1517049,
-    image: "/images/branch_jimbaran.png",
-    viewMap: "https://maps.app.goo.gl/5yUDkQhDydMX8mVg6",
-    rating: "5.0",
-  },
-  {
-    name: "24/7 Apotek Online Pharmacy - Med Delivery - Doctor & IV Drip Home Service. (Canggu)",
-    lat: -8.6457827,
-    lng: 115.1614056,
-    image: "/images/branch_canggu.png",
-    viewMap: "https://maps.app.goo.gl/c44xTQpzkbR3UJuN6",
-    rating: "5.0",
-  }
 ];
 
 const containerStyle = {
@@ -51,7 +35,7 @@ const containerStyle = {
   height: "400px",
 };
 
-const center = { lat: -8.6905, lng: 115.2122 };
+const center = { lat: -8.6323, lng: 115.1297 };
 
 export default function GoogleMaps() {
   const [selected, setSelected] = useState<Branch | null>(null);
@@ -59,7 +43,7 @@ export default function GoogleMaps() {
   return (
     <div className="px-4 mb-10">
       <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || ""}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={11}>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
           {branches.map((branch, i) => (
             <Marker
               key={i}
