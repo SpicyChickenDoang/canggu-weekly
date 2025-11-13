@@ -1,1 +1,1 @@
-#[CANGGU WEEKLY](https://adl-canggu-weekly.vercel.app/)
+# [CANGGU WEEKLY](https://adl-canggu-weekly.vercel.app/)
