@@ -21,15 +21,23 @@ export default function DownloadArticlePage() {
   const [pdfFiles, setPdfFiles] = useState<FileMetadata[]>([]);
   const [selectedFile, setSelectedFile] = useState<string>('');
   const [latestIssue, setlatestIssue] = useState<FileMetadata | any>('')
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   useEffect(() => {
     fetch('/api/pdfs')
       .then((res) => res.json())
       .then((data) => {
-        setPdfFiles(data || []);
-        setlatestIssue(data[0])
+        setIsDisabled(true);
+        if (data.length > 0) {
+          setPdfFiles(data);
+          setlatestIssue(data[0]);
+          setIsDisabled(false);
+        }
       })
-      .catch((err) => console.error('Failed to load PDFs:', err));
+      .catch((err) => {
+        setIsDisabled(true);
+        console.error('Failed to load PDFs:', err)
+      });
   }, []);
 
   const handleDownload = async (isLatest: any) => {
@@ -85,7 +93,7 @@ export default function DownloadArticlePage() {
             <span>OR</span>
           </div>
 
-          <Button onClick={() => handleDownload(true)} className="w-full">
+          <Button onClick={() => handleDownload(true)} className="w-full" disabled={isDisabled}>
             <Download className="mr-2 h-4 w-4" />
             Download our latest Issue
           </Button>

@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden flex justify-center items-center mb-8">
       <Image
-        src="/images/img-7.webp"
+        src="/images/2-min.webp"
         alt="Business meeting in a tropical location"
         fill
         className="object-cover"
@@ -26,7 +26,7 @@ export function HeroSection() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
-            <Link href="#contact-buttons">
+            <Link href="#contact">
               <Mail className="mr-2 h-5 w-5" />
               Get Advertising Info
             </Link>

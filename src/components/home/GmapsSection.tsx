@@ -1,30 +1,55 @@
-import Image from "next/image";
-import GoogleMaps from "../GoogleMaps";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-export default function GMapsSection() {
-    const gmapsImage = PlaceHolderImages.find(p => p.id === 'gmaps-image') ?? PlaceHolderImages[0];
+'use client';
+
+import { useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import GoogleMaps from '../GoogleMaps';
+
+type Location = 'A' | 'B' | 'C' | 'D';
+
+const locations: { value: Location; label: string }[] = [
+  { value: 'A', label: 'Canggu & Berawa' },
+  { value: 'B', label: 'Seminyak & Kuta' },
+  { value: 'C', label: 'Ubud' },
+  { value: 'D', label: 'Sanur' },
+];
+
+export default function LocationsSection() {
+  const [selectedLocation, setSelectedLocation] = useState<Location>('A');
+
   return (
-    <section className="overflow-hidden border-[3px] border-black mx-5 my-[10px] border-dashed">
-        <div className="flex flex-col md:flex-row md:min-h-[600px]">
-            <div className="relative md:w-1/2 hidden md:block">
-                <Image
-                    src={"/images/6-min.webp"}
-                    alt={gmapsImage.description}
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                />
+    <section id="locations" className="border-black mx-5 my-[10px] border-dashed border-[3px] bg-card md:py-24">
+      <div className="container max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="text-center md:text-left mb-8">
+              <h2 className="font-headline text-4xl font-bold">Our Distribution Network</h2>
+              <p className="mt-2 text-muted-foreground">
+                Select a region to see our magazine distribution points.
+              </p>
             </div>
-            <div className="flex flex-col justify-center p-8 text-center md:w-1/2">
-                <h2 className="mb-4 font-headline text-3xl font-bold">Our Distribution Network</h2>
-                <p className="mb-12 max-w-2xl mx-auto text-muted-foreground">
-                    Find our magazine at these fine locations across the island.
-                </p>
-                <GoogleMaps />
+
+            <div className="max-w-md mx-auto md:mx-0">
+              <Select onValueChange={(value: Location) => setSelectedLocation(value)} value={selectedLocation}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a location" />
+                </SelectTrigger>
+                <SelectContent>
+                  {locations.map((loc) => (
+                    <SelectItem key={loc.value} value={loc.value}>
+                      {loc.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            
+          </div>
+
+          <div className="rounded-lg overflow-hidden border shadow-lg min-h-[500px]">
+            <GoogleMaps locationId={selectedLocation} />
+          </div>
         </div>
+      </div>
     </section>
   );
 }

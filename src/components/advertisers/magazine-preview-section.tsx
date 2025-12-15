@@ -13,18 +13,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const magazineImages = [
-  { alt: 'Magazine Preview', src: "/magazine/_1.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_2.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_3.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_4.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_5.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_6.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_7.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_8.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_9.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_10.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_11.jpg"},
-  { alt: 'Magazine Preview', src: "/magazine/_12.jpg"},
+  { alt: 'Magazine Preview', src: "/magazine/_1.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_2.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_3.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_4.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_5.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_6.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_7.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_8.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_9.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_10.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_11.jpg" },
+  { alt: 'Magazine Preview', src: "/magazine/_12.jpg" },
 ]
 
 
@@ -66,8 +66,8 @@ export function MagazinePreviewSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className='hidden md:inline-flex'/>
-          <CarouselNext className='hidden md:inline-flex'/>
+          <CarouselPrevious className='hidden md:inline-flex' />
+          <CarouselNext className='hidden md:inline-flex' />
         </Carousel>
       </div>
     </section>
